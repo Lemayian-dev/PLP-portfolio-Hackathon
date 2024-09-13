@@ -341,9 +341,12 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    /* background-color: var(--bg-color); */
-           background-color: white;
+    background-color: var(--bg-color);
+        
 
+}
+.skills-headings  {
+    color: white;
 }
 
 .skills-heading {
@@ -351,10 +354,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+  
 }
 
 .skills-main h2,h3 {
+    
     color: black;
 }
 
@@ -1119,7 +1123,7 @@ footer {
     }
   
     .container {
-        margin-top: 0px;
+        margin-top: 80px;
         width: 100%;
         height: 100vh;
         background-color: var(--bg-color);
@@ -1139,6 +1143,11 @@ footer {
         margin: 0 auto;
     }
 
+    .skills-headings  {
+        color: white;
+        margin-top: -100px;
+        text-align: center;
+    }
     .progress-bar {
         background: #959595;
         width: 300px;
