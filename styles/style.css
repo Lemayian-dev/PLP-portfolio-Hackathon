@@ -342,6 +342,7 @@ h2 {
     align-items: center;
     justify-items: center;
     background-color: var(--bg-color);
+   
 }
 
 .skills-heading {
@@ -1102,10 +1103,10 @@ footer {
 
     /* skills mobile responsiveness */
     .skills-main {
-        margin-top: 100px;
+        /* margin-top: 0px; */
         width: 100%;
         height: 120vh;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
   
     .container {
