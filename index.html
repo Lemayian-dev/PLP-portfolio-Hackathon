@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaac Lemayian Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">Isaac Lemayian</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#languages">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="images\portfolio image.jpeg" alt="">
+      <h1>Hi there 👋🏼, I'm Isaac Lemayian</h1>
+      <p>
+        A passionate web developer and designer who loves creating sleek and
+        modern designs. Let's build something great together!
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary-btn">View My Work</a>
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <img src="images/port image 4.jpeg" alt="" />
+      <h2>About Me</h2>
+      <p>
+        I’m a self-taught UI/UX designer and web developer with a passion for
+        coding, design, and creating seamless user experiences. My journey
+        into tech started with curiosity, and now I’m driven by the endless
+        possibilities of design and technology. I love experimenting with new
+        technologies, improving my skills daily, and turning complex problems
+        into simple and beautiful solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Programming Languages Section -->
+
+  <!-- skills -->
+  <section class="skills-main">
+    <div class="skills-heading">
+        
+    </div>
+    <h1>MY SKILLS</h1>
+    <h3 class="skills-description">This are some of the skills and softwares that I know how to use.</h3>
+    <div class="container">
+      <div class="skills">
+        <h2>HTML</h2>
+        <div class="progress-bar">
+          <div class="html"><span>70%</span></div>
+        </div>
+        <h2>CSS</h2>
+        <div class="progress-bar">
+          <div class="css"><span>55%</span></div>
+        </div>
+        <h2>JAVASCRIPT</h2>
+        <div class="progress-bar">
+          <div class="javascript"><span>40%</span></div>
+        </div>
+        <h2>PYTHON</h2>
+        <div class="progress-bar">
+          <div class="python"><span>25%</span></div>
+        </div>
+        <h2>SQL</h2>
+        <div class="progress-bar">
+          <div class="sql"><span>50%</span></div>
+        </div>
+        <h2>GIT</h2>
+        <div class="progress-bar">
+          <div class="git"><span>45%</span></div>
+        </div>
+        <h2>WordPress</h2>
+        <div class="progress-bar">
+          <div class="wordpress"><span>75%</span></div>
+        </div>
+        <h2>FIGMA</h2>
+        <div class="progress-bar">
+          <div class="figma"><span>70%</span></div>
+        </div>
+        <h2>PHOTOSHOP</h2>
+        <div class="progress-bar">
+          <div class="photoshop"><span>90%</span></div>
+        </div><h2>ILLUSTRATOR</h2>
+        <div class="progress-bar">
+          <div class="illustrator"><span>60%</span></div>
+        </div>
+  
+      </div>
+  
+  </section>
+  <section class="Hero-section">
+
+    <!-- meme generator heading -->
+    <h1>Let's break monotony</h1>
+
+    <!-- meme card code -->
+    <div>
+        <div class="meme-container">
+            <!-- p tag for memes together with a default meme when page loads -->
+            <p id="memeText" class="memeText">Why don't some couples go to the gym? Because some relationships don't work out!,
+            </p>
+
+            <!-- button for generating meme -->
+            <button class="meme-btn" id="memeBtn" onclick='generateMeme()' >Generate meme😂</button>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+  <!-- Educational Background Section -->
+  <section class="education">
+    <div class="education-content">
+      <h2>My education</h2>
+      <div class="education-item">
+        <h3>Software development Bootcamp</h3>
+        <p>Power learn project</p>
+        <p>August 2024 - December 2024</p>
+      </div>
+      <div class="education-item">
+        <h3>Bachelors degree in Education Sci (Chemistry & Biology)</h3>
+        <p>Tangaza University</p>
+        <p>2020 - 2024</p>
+        <p>Waiting to graduate this October</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Front-end Development</h3>
+        <p>Free Code Camp</p>
+        <p>2021 - 2022</p>
+      </div>
+      <div class="education-item">
+        <h3>Graphics Design Certification</h3>
+        <p>Udemy course</p>
+        <p>2020 - 2021</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2>Projects I have done</h2>
+    <p>Here are some of the projects that I have done.</p>
+
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="images\JS clock.PNG" alt="Project 1" />
+        <div class="project-content">
+          <h3>Javascript Digital clock</h3>
+          <p>
+            Developed with HTML, CSS, and JavaScript. This project showcases a
+            clean and modern UI for an Online digital clock.
+          </p>
+          <a href="https://digitl-js-clock.netlify.app/" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/Jokes generator.PNG" alt="Project 1" />
+        <div class="project-content">
+          <h3>Jokes generator site</h3>
+          <p>
+            Developed with HTML, CSS, and JavaScript. This project showcases a
+            clean and modern UI for an Online digital clock.
+          </p>
+          <a href="https://digitl-js-clock.netlify.app/" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images\Responsive pricing cards.PNG" alt="Project 2" />
+        <div class="project-content">
+          <h3>Responsive Pricing cards</h3>
+          <p>
+            Responsive pricing cards using HTML and CSS only. This showcase
+            best cards designs for a website.
+          </p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images\investwise website.PNG" alt="Project 3" />
+        <div class="project-content">
+          <h3>Investwise Business website</h3>
+          <p>An investment business website using HTML and TailwindCSS</p>
+          <a href="https://investwisesite.netlify.app/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images\nashula media.PNG" alt="Project 4" />
+        <div class="project-content">
+          <h3>The nashula media website</h3>
+          <p>
+            A clean and sleek website for Nashula media. I created it using
+            wordpress and elementor.
+          </p>
+          <a href="https://thenashulamedia.com/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Graphic designs section -->
+  <section  class="projects" id="projects">
+    <h2>I love Graphic design and Photo manipulation</h2>
+    <p>Definitely I have created some</p>
+    <div class="posters">
+ 
+        <img src="images/design 1.jpeg" alt="Project 3" />
+   
+
+        <img src="images/design 2.jpeg" alt="Project 3" />
+
+
+        <img src="images/design 4.jpeg" alt="Project 3" />
+
+        <img src="images/design 3.jpeg" alt="Project 3" />
+
+
+        <img src="images/design 6.jpeg" alt="Project 3" />
+
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form action="submit-form" method="post" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

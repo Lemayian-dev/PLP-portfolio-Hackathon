@@ -1,0 +1,812 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root variables */
+:root {
+    --primary-color: #6B5FFF;
+    --secondary-color: #080242;
+    --text-color: #ffffff;
+    --bg-color: #101625;
+    --primaryFont: 'Space Grotest', sans-serif;
+}
+
+/* Global styles */
+body {
+    background-color: var(--bg-color);
+    /* font-family: 'Space Grotesk', sans-serif; */
+    font-family: 'montserrat';
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header and Nav */
+header {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+    padding: 0 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+.hero-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 0.6s ease-out, blobAnimation 6s infinite ease-in-out;
+    /* Combined animations */
+}
+
+/* Hover effect */
+.hero-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Blub shape animation */
+@keyframes blobAnimation {
+
+    0%,
+    100% {
+        border-radius: 20% 40% 30% 50% / 40% 20% 50% 30%;
+        /* Initial shape */
+    }
+
+    25% {
+        border-radius: 30% 50% 40% 20% / 30% 50% 20% 40%;
+        /* Slight blub change */
+    }
+
+    50% {
+        border-radius: 40% 20% 50% 30% / 50% 30% 40% 20%;
+        /* Another shape variation */
+    }
+
+    75% {
+        border-radius: 50% 30% 20% 40% / 20% 40% 30% 50%;
+        /* Final shape change */
+    }
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Section General Styles */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 50px;
+    line-height: 1.8;
+    max-width: 100vw;
+    height: 80vh;
+}
+
+.about-container {
+    max-width: 1000px;
+}
+
+.about img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adds a soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: floatAnimation 8s infinite ease-in-out;
+    /* Applies the floating animation */
+}
+
+/* Hover effect */
+.about img:hover {
+    transform: scale(1.03) rotate(2deg);
+    /* Slight zoom and tilt on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    /* Enhances shadow on hover */
+}
+
+/* Floating and rotating animation */
+@keyframes floatAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        /* Start and end at normal state */
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(-1deg);
+        /* Moves slightly up and tilts left */
+    }
+
+    50% {
+        transform: translateY(5px) rotate(3deg);
+        /* Moves slightly down and tilts right */
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(0deg);
+        /* Slight upward movement and back to normal tilt */
+    }
+
+    10% {
+        transform: translateY(-5px) rotate(1deg);
+        /* Slight upward movement and back to normal tilt */
+    }
+}
+
+
+/* Programming Languages Section */
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.languages {
+    background-color: #121826;
+    text-align: center;
+    padding: 50px;
+    height: 70vh;
+}
+
+.languages ul {
+    list-style: none;
+    padding: 0;
+}
+
+.languages li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    background: rgba(107, 95, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+/* skills progress bar */
+.skills-main {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+.skills-heading {
+    width: 100%;
+    padding-bottom: 10px;
+
+}
+
+.skills-heading h1 {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 100px;
+    color: var(--text-color);
+}
+
+.container {
+    margin-top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    top: 0;
+    left: 0;
+}
+
+.skills h2 {
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 60px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.progress-bar {
+    background: #959595;
+    width: 600px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar div {
+    height: 10px;
+    border-radius: 5px;
+    width: 0%;
+}
+
+.progress-bar div span {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    /* background: #959595; */
+    float: right;
+    margin-top: -15px;
+    margin-right: -20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.html {
+    background: #e91e63;
+    animation: html 1s linear forwards;
+}
+
+.css {
+    background: #cddc39;
+    animation: css 1s linear forwards;
+
+}
+
+.javascript {
+    background: #00bcd4;
+    animation: javascript 1s linear forwards;
+
+}
+
+.python {
+    background: #ffeb3b;
+    animation: python 1s linear forwards;
+
+}
+
+.sql {
+    background: #3ba7ff;
+    animation: sql 1s linear forwards;
+
+}
+
+.git {
+    background: #157409;
+    animation: git 1s linear forwards;
+}
+
+.wordpress {
+    background: #740966;
+    animation: wordpress 1s linear forwards;
+}
+
+.figma {
+    background: #067e78;
+    animation: figma 1s linear forwards;
+}
+
+.photoshop {
+    background: #9c27b0;
+    animation: photoshop 1s linear forwards;
+}
+
+.illustrator {
+    background: #e46a07;
+    animation: illustrator 1s linear forwards;
+}
+
+.html span {
+    border: 1px solid #e91e63;
+}
+
+.css span {
+    border: 1px solid #cddc39;
+}
+
+.javascript span {
+    border: 1px solid #00bcd4;
+}
+
+.python span {
+    border: 1px solid #ffeb3b;
+}
+
+.sql span {
+    border: 1px solid #3ba7ff;
+}
+
+.git span {
+    border: 1px solid #157409;
+}
+
+.wordpress span {
+    border: 1px solid #740966;
+}
+
+.figma span {
+    border: 1px solid #740966;
+}
+
+.photoshop span {
+    border: 1px solid #9c27b0;
+}
+
+.illustrator span {
+    border: 1px solid #e46a07;
+}
+
+
+@keyframes html {
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes css {
+    100% {
+        width: 55%;
+    }
+}
+
+@keyframes javascript {
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes python {
+    100% {
+        width: 25%;
+    }
+}
+
+@keyframes sql {
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes git {
+    100% {
+        width: 45%;
+    }
+}
+
+@keyframes wordpress {
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes figma {
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes photoshop {
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes illustrator {
+    100% {
+        width: 60%;
+    }
+}
+
+/* jokes generator */
+.Hero-section {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+
+}
+
+
+/* the meme generator heading */
+.Hero-section h1 {
+    font-size: 30px;
+    position: relative;
+    text-align: top;
+    margin-top: -420px;
+}
+
+
+/* code for the div container for memes */
+.meme-container {
+    width: 50pc;
+    height: 300px;
+    border: 1px solid white;
+    background-color: white;
+    /* box-shadow: 2px 2px 30px rgb(255, 255, 255); */
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meme-container:hover {
+    box-shadow: 2px 2px 300px var(--primary-color);
+
+}
+
+
+/* this is the meme text styling */
+.memeText {
+    padding: 50px 20px 20px 20px;
+    font-size: 24px;
+    text-align: center;
+    color: black;
+    font-family: 'montserrat', sans-serif;
+}
+
+
+/* meme button styling */
+.meme-btn {
+    font-size: 20px;
+    width: 200px;
+    height: 45px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-family: 'Space Grotesk';
+
+}
+
+.meme-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* Educational Background Section */
+.education {
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 50px;
+}
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.education-item {
+    background-color: #2a2f3a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.education-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.education-item p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Projects Section */
+.projects {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.projects p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* Graphic design section */
+.posters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+}
+
+.posters img {
+    width: 500px;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #1a1f2f;
+    text-align: center;
+    padding: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var
+}
+
+
+@media (max-width: 768px) {
+    .skills-main {
+        width: 100%;
+        height: 110vh;
+    }
+
+    .skills-description {
+        text-align: center;
+        font-weight: 400;
+    }
+    .projects-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .progress-bar {
+        background: #959595;
+        width: 300px;
+        height: 10px;
+        border-radius: 5px;
+    }
+
+    .meme-container {
+        width: 25pc;
+        height: 300px;
+    }
+
+    .meme-btn {
+        font-size: 16px;
+        width: 200px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-family: 'Space Grotesk';
+
+
+    }
+
+    h1 {
+        font-size: 30px;
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .posters {
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 20px;
+
+    }
+
+    .posters img {
+        width: 400px;
+    }
+}
