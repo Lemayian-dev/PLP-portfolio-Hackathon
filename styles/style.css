@@ -1,11 +1,11 @@
-/* General reset */
+/* riseting every space on the website to 0 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Root variables */
+/* Root variables or colors and font */
 :root {
     --primary-color: #6B5FFF;
     --secondary-color: #080242;
@@ -17,7 +17,7 @@
 /* Global styles */
 body {
     background-color: var(--bg-color);
-    /* font-family: 'Space Grotesk', sans-serif; */
+
     font-family: 'montserrat';
     color: var(--text-color);
     line-height: 1.6;
@@ -35,6 +35,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* navigation styling */
 nav {
     display: flex;
     justify-content: space-between;
@@ -44,10 +45,15 @@ nav {
     padding: 0 20px;
 }
 
+/* logo style */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    cursor: pointer;
+}
+.logo a {
+    color: white;
 }
 
 /* Mobile Nav Links */
@@ -75,7 +81,7 @@ nav {
 }
 
 .nav-links li a:hover {
-    color: #f09;
+    color: var(--primary-color);
 }
 
 /* Show links when active */
@@ -102,7 +108,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Hamburger Effect */
+/* Hamburger Effect on the mobile phoo0ne */
 .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -114,38 +120,6 @@ nav {
 .menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
-
-/* Desktop Layout */
-@media (min-width: 768px) {
-    .nav-links {
-        display: flex; /* Show links by default on desktop */
-        flex-direction: row;
-        gap: 20px;
-        position: static;
-        background-color: transparent;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    .nav-links li a {
-        font-size: 1rem;
-        color: #fff;
-    }
-
-    .nav-links li a:hover {
-        color: #f09;
-    }
-
-    .menu-toggle {
-        display: none; /* Hide the hamburger on desktop */
-    }
-}
-
-
 
 
 /* Hero Section */
@@ -295,18 +269,14 @@ h2 {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* Adds a soft shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     animation: floatAnimation 8s infinite ease-in-out;
-    /* Applies the floating animation */
 }
 
-/* Hover effect */
+/* Hover effect for my black and white image. I love it */
 .about img:hover {
     transform: scale(1.03) rotate(2deg);
-    /* Slight zoom and tilt on hover */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    /* Enhances shadow on hover */
 }
 
 /* Floating and rotating animation */
@@ -315,27 +285,22 @@ h2 {
     0%,
     100% {
         transform: translateY(0px) rotate(0deg);
-        /* Start and end at normal state */
     }
 
     25% {
         transform: translateY(-10px) rotate(-1deg);
-        /* Moves slightly up and tilts left */
     }
 
     50% {
         transform: translateY(5px) rotate(3deg);
-        /* Moves slightly down and tilts right */
     }
 
     75% {
         transform: translateY(-5px) rotate(0deg);
-        /* Slight upward movement and back to normal tilt */
     }
 
     10% {
         transform: translateY(-5px) rotate(1deg);
-        /* Slight upward movement and back to normal tilt */
     }
 }
 
@@ -573,19 +538,19 @@ h2 {
 
 @keyframes html {
     100% {
-        width: 70%;
+        width: 80%;
     }
 }
 
 @keyframes css {
     100% {
-        width: 55%;
+        width: 70%;
     }
 }
 
 @keyframes javascript {
     100% {
-        width: 40%;
+        width: 60%;
     }
 }
 
@@ -704,6 +669,54 @@ h2 {
 }
 
 
+/* Interests Section */
+.interests {
+    padding: 50px 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.interests h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.interests-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.interest {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.interest i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.interest h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.interest p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+
 /* Educational Background Section */
 .education {
     background-color: var(--bg-color);
@@ -764,6 +777,11 @@ h2 {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.projects-container a {
+    color: var(--primary-color);
+    border: 1px solid black;
 }
 
 .project-card {
@@ -907,6 +925,43 @@ h2 {
 }
 
 
+/* popup when someone scrolls to the middle of the site */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it’s on top */
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    color: #f09;
+}
+
+
+
 
 
 /* Footer Styling */
@@ -929,6 +984,8 @@ footer {
     font-weight: bold;
 }
 
+
+
 .footer-nav .footer-links {
     list-style: none;
     display: flex;
@@ -943,7 +1000,7 @@ footer {
 }
 
 .footer-links li a:hover {
-    color: #f09;
+    color: var(--primary-color);
 }
 
 .footer-socials {
@@ -958,7 +1015,7 @@ footer {
 }
 
 .footer-socials a:hover {
-    color: #f09;
+    color: var(--primary-color);
 }
 
 /* Footer Bottom */
@@ -984,6 +1041,35 @@ footer {
     }
 }
 
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex; /* Show links by default on desktop */
+        flex-direction: row;
+        gap: 20px;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        color: #fff;
+    }
+
+    .nav-links li a:hover {
+        color: #f09;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide the hamburger on desktop */
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -1011,14 +1097,15 @@ footer {
     .about {
         
         max-width: 100vw;
-        height: 190vh;
+        height: 100vh;
     }
 
     /* skills mobile responsiveness */
     .skills-main {
         margin-top: 100px;
         width: 100%;
-        height: 200vh;
+        height: 120vh;
+        margin-bottom: 20px;
     }
 
     .skills-description {

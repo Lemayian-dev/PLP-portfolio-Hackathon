@@ -12,19 +12,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 </head>
 
+<!-- body section. This is where the whole portfolio code is. DO NOT EDIT UNLESS I HAVE GIVEN YOU PERMISSION😁 -->
 <body>
+
+  <!-- HEADER CODE -->
   <header>
     <nav>
-        <div class="logo"><i class="fas fa-code"></i>
+        <div class="logo">
+          <a href=""><i class="fas fa-code"></i></a>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#languages">Skills</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#interests">Interests</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <!-- HAMBUGER MENU -->
         <div class="menu-toggle" id="menu-toggle">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -67,10 +73,9 @@
     </div>
   </section>
 
-  <!-- Programming Languages Section -->
 
-  <!-- skills -->
-  <section class="skills-main">
+  <!-- This are some of the skills that I have -->
+  <section class="skills-main" id="skills">
     <div class="skills-heading">
       <h1>MY SKILLS</h1>
     </div>
@@ -80,15 +85,15 @@
       <div class="skills">
         <h2>HTML</h2>
         <div class="progress-bar">
-          <div class="html"><span>70%</span></div>
+          <div class="html"><span>80%</span></div>
         </div>
         <h2>CSS</h2>
         <div class="progress-bar">
-          <div class="css"><span>55%</span></div>
+          <div class="css"><span>70%</span></div>
         </div>
         <h2>JAVASCRIPT</h2>
         <div class="progress-bar">
-          <div class="javascript"><span>40%</span></div>
+          <div class="javascript"><span>50%</span></div>
         </div>
         <h2>PYTHON</h2>
         <div class="progress-bar">
@@ -121,15 +126,16 @@
       </div>
   
   </section>
+
+
+  <!-- Meme generator project to break monotony -->
   <section class="Hero-section">
-
     <!-- meme generator heading -->
-
     <div class="skills-heading">
       <h1>Let's break monotony</h1>
     </div>
 
-    <!-- meme card code -->
+    <!-- meme card  -->
     <div>
         <div class="meme-container">
             <!-- p tag for memes together with a default meme when page loads -->
@@ -143,11 +149,38 @@
 
 </section>
 
+<!-- Interests section -->
+
+<section id="interests" class="interests">
+  <h2>My Interests</h2>
+  <div class="interests-container">
+    <div class="interest">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Tech & Coding</h3>
+      <p>I love exploring new technologies, coding, and building innovative projects. Whether it's working on a web app or automating tasks, technology fuels my creativity.</p>
+    </div>
+    <div class="interest">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Digital Art</h3>
+      <p>Creating digital art and manipulating photos in Photoshop is a passion of mine. I enjoy experimenting with different styles and techniques to produce unique artwork.</p>
+    </div>
+    <div class="interest">
+      <i class="fas fa-network-wired"></i>
+      <h3>Networking</h3>
+      <p>Building connections and networking with professionals in the tech industry helps me stay updated with the latest trends and opportunities. I believe in the power of collaboration and learning from others.</p>
+    </div>
+    <div class="interest">
+      <i class="fas fa-book"></i>
+      <h3>Continuous Learning</h3>
+      <p>I'm always eager to learn new skills and enhance my knowledge. Whether it's through online courses, books, or practical projects, I believe in lifelong learning to stay ahead in the ever-evolving tech landscape.</p>
+    </div>
+  </div>
+</section>
 
 
 
   <!-- Educational Background Section -->
-  <section class="education">
+  <section class="education" id="education">
     <div class="education-content">
       <h2>My education</h2>
       <div class="education-item">
@@ -175,14 +208,14 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects I have done  -->
   <section class="projects" id="projects">
     <h2>Projects I have done</h2>
     <p>Here are some of the projects that I have done.</p>
 
     <div class="projects-container">
       <div class="project-card">
-        <img src="images\JS clock.PNG" alt="Project 1" />
+        <img src="images\JS clock.PNG" alt="js digital clock" />
         <div class="project-content">
           <h3>Javascript Digital clock</h3>
           <p>
@@ -192,6 +225,17 @@
           <a href="https://digitl-js-clock.netlify.app/" class="btn" target="_blank">View Project</a>
         </div>
       </div>
+      <div class="projects-container">
+        <div class="project-card">
+          <img src="images/todolistpro.PNG" alt="todolist pro" />
+          <div class="project-content">
+            <h3>TodoList pro</h3>
+            <p>
+              This application help users to add their todo's. Its meant for productivity. I created with Javascript and CSS.
+            </p>
+            <a href="https://advanced-todo-pro.netlify.app/" class="btn" target="_blank">View Project</a>
+          </div>
+        </div>
 
       <div class="project-card">
         <img src="images/Jokes generator.PNG" alt="Project 1" />
@@ -201,7 +245,7 @@
             Developed with HTML, CSS, and JavaScript. This project showcases a
             clean and modern UI for an Online digital clock.
           </p>
-          <a href="https://digitl-js-clock.netlify.app/" class="btn" target="_blank">View Project</a>
+          <a href="https://jokesweb.netlify.app/" class="btn" target="_blank">View Project</a>
         </div>
       </div>
       <div class="project-card">
@@ -212,7 +256,7 @@
             Responsive pricing cards using HTML and CSS only. This showcase
             best cards designs for a website.
           </p>
-          <a href="#" class="btn">View Project</a>
+          <a href="https://byte-pricing-cards.netlify.app/" target="_blank" class="btn">View Project</a>
         </div>
       </div>
 
@@ -234,6 +278,17 @@
             wordpress and elementor.
           </p>
           <a href="https://thenashulamedia.com/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/kipweb.PNG" alt="Project 4" />
+        <div class="project-content">
+          <h3>Kiprono writes</h3>
+          <p>
+            This website is for Kiprono Lawrence who is an SEO expert. I created it with wordpress
+          </p>
+          <a href="https://kipronowrites.com/" target="_blank" class="btn">View Project</a>
         </div>
       </div>
     </div>
@@ -287,7 +342,7 @@
     </form>
 </section>
 
-<!-- Popup Modal -->
+<!-- Popup when someone clicks submit -->
 <div id="popupMessage" class="popup">
     <div class="popup-content">
         <span class="close-btn">&times;</span>
@@ -297,28 +352,45 @@
 </div>
 
 
+
+
+
+<!-- Popup when someone scrolls to the middle of the site -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="popup-close" class="popup-close">&times;</span>
+    <p>This portfolio project is for a hackathon for Power Learn Project. I hope to win the cash prize. Definitely😂😂</p><br>
+    <p>Click any empty space to remove this PopUp</p>
+
+  </div>
+</div>
+
+
+<!-- Footer code and socilal links -->
 <footer>
   <div class="footer-content">
     <div class="footer-logo">
       <h2>Isaac Lemayian</h2>
+
     </div>
     
     <div class="footer-nav">
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#languages">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer-socials">
-      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100085153183346" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/Zack_lem" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/isaac-lemayian/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/lemayian.izaac/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
   

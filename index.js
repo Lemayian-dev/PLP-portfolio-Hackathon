@@ -42,6 +42,35 @@ function generateMeme() {
 };
 
 
+// code when someone scrolls to the middle of the page
+document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('popup-close');
+    let hasShown = false;
+
+    function checkScroll() {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const middleOfPage = document.documentElement.scrollHeight / 2;
+
+      if (scrollPosition > middleOfPage && !hasShown) {
+        popup.style.display = 'flex';
+        hasShown = true;
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+
+    closeBtn.addEventListener('click', function () {
+      popup.style.display = 'none';
+    });
+
+    // Optional: Close popup if user clicks outside of it
+    window.addEventListener('click', function (event) {
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  });
 
 // code for the popup on contact form
 document.getElementById('contactForm').addEventListener('submit', function (event) {
