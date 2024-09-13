@@ -1011,14 +1011,14 @@ footer {
     .about {
         
         max-width: 100vw;
-        height: 150vh;
+        height: 190vh;
     }
 
     /* skills mobile responsiveness */
     .skills-main {
         margin-top: 100px;
         width: 100%;
-        height: 110vh;
+        height: 200vh;
     }
 
     .skills-description {
