@@ -602,6 +602,8 @@ h2 {
     width: 100%;
     height: 70vh;
     position: relative;
+    display: flex;
+    flex-direction: row;
 
 }
 
@@ -611,7 +613,7 @@ h2 {
     font-size: 30px;
     position: relative;
     text-align: top;
-    margin-top: -420px;
+    margin-top: -460px;
 }
 
 
@@ -1096,16 +1098,15 @@ footer {
         transition: background 0.3s;
     }
     .about {
-        
         max-width: 100vw;
         height: 100vh;
     }
 
     /* skills mobile responsiveness */
     .skills-main {
-        /* margin-top: 0px; */
+        /* magin-top: 0px; */
         width: 100%;
-        height: 120vh;
+        height: 150vh;
         margin-bottom: 40px;
     }
   
@@ -1139,9 +1140,11 @@ footer {
 /* memes main container */
     .Hero-section {
         width: 100%;
-        height: 70vh;
+        height: 90vh;
         position: relative;
         margin-top: 60px;
+        display: flex;
+        flex-direction: row;
     }
 
     .meme-container {
