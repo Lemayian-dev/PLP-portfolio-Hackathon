@@ -341,8 +341,9 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    background-color: var(--bg-color);
-   
+    /* background-color: var(--bg-color); */
+           background-color: white;
+
 }
 
 .skills-heading {
@@ -351,6 +352,10 @@ h2 {
     justify-content: center;
     align-items: center;
     
+}
+
+.skills-main h2,h3 {
+    color: black;
 }
 
 .skills-heading h1 {
@@ -363,10 +368,10 @@ h2 {
     padding: 10px 20px;
     background: linear-gradient(135deg, #6B5FFF, #3023ae);
     border-radius: 8px;
-    color: #fff;
+    color: white;
     box-shadow: 0 4px 15px rgba(48, 35, 174, 0.6);
     overflow: hidden;
-    margin: 0; /* Removes default margin to aid centering */
+    margin: 0;
 }
 
 .skills-heading h1::before {
@@ -1110,6 +1115,7 @@ footer {
         /* margin-bottom: 40px; */
         display: flex;
         flex-direction: column;
+        /* background-color: white; */
     }
   
     .container {
