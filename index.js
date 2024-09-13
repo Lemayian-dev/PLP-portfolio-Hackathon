@@ -1,3 +1,16 @@
+// menu toggle for the mobile pone
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+
+
+
+
 // container for memes. its an array
 const jokes = [
     "Why don't scientists trust atoms? Because they make up everything!",
@@ -27,3 +40,22 @@ function generateMeme() {
     memeText.textContent = jokes[randomIndex];
 
 };
+
+
+
+// code for the popup on contact form
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    document.getElementById('popupMessage').style.display = 'flex';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function () {
+    document.getElementById('popupMessage').style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    const popup = document.getElementById('popupMessage');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});

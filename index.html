@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Isaac Lemayian Portfolio</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
@@ -14,22 +15,25 @@
 <body>
   <header>
     <nav>
-      <div class="logo">Isaac Lemayian</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#languages">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+        <div class="logo"><i class="fas fa-code"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#languages">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
-  </header>
+</header>
+
+
 
   <!-- Hero Section -->
   <section class="hero" id="home">
@@ -68,10 +72,10 @@
   <!-- skills -->
   <section class="skills-main">
     <div class="skills-heading">
-        
+      <h1>MY SKILLS</h1>
     </div>
-    <h1>MY SKILLS</h1>
-    <h3 class="skills-description">This are some of the skills and softwares that I know how to use.</h3>
+    
+    <h3 class="skills-description">This are some of the skills and softwares that I use.</h3>
     <div class="container">
       <div class="skills">
         <h2>HTML</h2>
@@ -120,7 +124,10 @@
   <section class="Hero-section">
 
     <!-- meme generator heading -->
-    <h1>Let's break monotony</h1>
+
+    <div class="skills-heading">
+      <h1>Let's break monotony</h1>
+    </div>
 
     <!-- meme card code -->
     <div>
@@ -258,13 +265,69 @@
   <!-- Contact Form Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <form action="submit-form" method="post" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary-btn">Send Message</button>
+    <div class="contact-details">
+        <div class="contact-item">
+            
+            <span>Email: lemayian.dev@gmail.com</span>
+        </div>
+        <div class="contact-item">
+            
+            <span>Phone: +254798 984 105</span>
+        </div>
+        <div class="contact-item">
+          
+            <span>Address: Nairobi, Kenya</span>
+        </div>
+    </div>
+    <form action="submit-form" method="post" class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn primary-btn">Send Message</button>
     </form>
-  </section>
+</section>
+
+<!-- Popup Modal -->
+<div id="popupMessage" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <p>Sorry, I am working to make this form work. Meanwhile, you can reach me at:</p>
+        <p><strong>lemayian.dev@gmail.com</strong></p>
+    </div>
+</div>
+
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>Isaac Lemayian</h2>
+    </div>
+    
+    <div class="footer-nav">
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#languages">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-socials">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 Isaac Lemayian. All rights reserved.</p>
+  </div>
+</footer>
+
+
 
   <script src="index.js"></script>
 </body>
