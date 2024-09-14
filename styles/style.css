@@ -810,6 +810,7 @@ h2 {
     padding: 60px 20px;
     text-align: center;
     background-color: var(--bg-color);
+
 }
 
 .projects h2 {
@@ -825,12 +826,12 @@ h2 {
 }
 
 .projects-container {
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .projects-container a {
@@ -845,10 +846,13 @@ h2 {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    width: calc(50% - 20px); 
+    box-sizing: border-box;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
@@ -871,6 +875,27 @@ h2 {
     font-size: 1rem;
     color: #666;
     margin-bottom: 15px;
+}
+
+/* Figma embed */
+.figma-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional border for styling */
+    margin: 0 auto; /* Center the container */
+}
+
+.figma-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 
@@ -987,10 +1012,10 @@ h2 {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Make sure it’s on top */
+    z-index: 1000; /
 }
 
 .popup-content {
@@ -1095,7 +1120,72 @@ footer {
     }
 }
 
-/* Desktop Layout */
+
+
+
+#figma {
+    position: absolute;
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    opacity: 0.8; 
+    filter: blur(1px); 
+    transition: all 0.3s ease-in-out;
+  top: 50%;
+  left: 20%;
+  transform: rotate(-15deg);
+}
+
+.figma:hover {
+    filter: blur(0); 
+    opacity: 1; 
+}
+
+
+#js {
+    position: absolute;
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    opacity: 0.8; 
+    filter: blur(1px); 
+    transition: all 0.3s ease-in-out;
+  top: 50%;
+  right: 20%;
+  transform: rotate(-15deg);
+}
+
+.js:hover {
+    filter: blur(0); 
+    opacity: 1; 
+}
+
+#photoshop {
+    position: absolute;
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    opacity: 0.8; 
+    filter: blur(1px); 
+    transition: all 0.3s ease-in-out;
+ 
+
+
+
+  max-width: 90px;
+  top: 96%;
+  right: 50%;
+  transform: rotate(-15deg);
+}
+
+.photoshop:hover {
+    filter: blur(0); 
+    opacity: 1; 
+}
+
+
+
+/* Desktop additional layouth Layout */
 @media (min-width: 768px) {
     .nav-links {
         display: flex; /* Show links by default on desktop */
@@ -1126,6 +1216,8 @@ footer {
 }
 
 
+
+/* tables and mobile phones design */
 @media (max-width: 768px) {
     .hero-content img {
         width: 80%;
@@ -1179,11 +1271,12 @@ footer {
         font-weight: 400;
     }
     .projects-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
+        flex-direction: column; 
+    }
+
+    .project-card {
+        width: 100%; 
+        margin-bottom: 20px; 
     }
 
     .skills-headings  {
@@ -1235,6 +1328,28 @@ footer {
         font-size: 24px;
         padding-bottom: 20px;
     }
+
+    /* figma emmbed  */
+    .figma-embed {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 100vh;
+        overflow: hidden;
+        max-width: 100%;
+        background-color: var(--bg-color);
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Optional border for styling */
+        margin: 0 auto; /* Center the container */
+    }
+    
+    .figma-embed iframe {
+        height: 100vh; /* Full viewport height for very small screens */
+        padding-bottom: 0;
+        width: 100vw;
+        
+    }
+    
+    
+    
     .posters {
         display: grid;
         grid-template-columns:1fr;
@@ -1246,8 +1361,34 @@ footer {
         width: 300px;
     }
 
+
+
     /* contact section */
     .contact-details {
         display: grid;
+    }
+    #figma {
+        position: absolute;
+            width: 100%;
+            max-width: 30px;
+            top: 20%;
+            left: 20%;
+            transform: rotate(-15deg);
+    }
+    #js {
+        position: absolute;
+            width: 100%;
+            max-width: 40px;
+            top: 20%;
+            right: 20%;
+            transform: rotate(-15deg);
+    }
+    #photoshop {
+        position: absolute;
+            width: 100%;
+            max-width: 50px;
+            top: 96%;
+            right: 50%;
+            transform: rotate(-15deg);
     }
 }
