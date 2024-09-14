@@ -11,38 +11,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 </head>
 
 <!-- body section. This is where the whole portfolio code is. DO NOT EDIT UNLESS I HAVE GIVEN YOU PERMISSION😁 -->
+
 <body>
 
   <!-- HEADER CODE -->
   <header>
     <nav>
-        <div class="logo">
-          <a href=""><i class="fas fa-code"></i></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#interests">Interests</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- HAMBUGER MENU -->
-        <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+      <div class="logo">
+        <a href=""><i class="fas fa-code"></i></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- HAMBUGER MENU -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
-</header>
+  </header>
 
-<img src="images/figma-icon.png" id="figma" alt="figma icon">
-<img src="images/java-script-text-on-plate.png" id="js" alt="javascript-icon">
+  <img src="images/figma-icon.png" id="figma" alt="figma icon">
+  <img src="images/java-script-text-on-plate.png" id="js" alt="javascript-icon">
 
 
   <!-- Hero Section -->
@@ -56,7 +58,12 @@
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="btn primary-btn">View My Work</a>
-        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+        <!-- <a href="#contact" class="btn secondary-btn">Contact Me</a> -->
+        <!-- Calendly link widget begin -->
+        <a href="" class="btn secondary-btn"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/lemayian-dev/30min'});return false;">Schedule
+          time with me</a>
+        <!-- Calendly link widget end -->
       </div>
     </div>
   </section>
@@ -123,13 +130,14 @@
         <h2>PHOTOSHOP</h2>
         <div class="progress-bar">
           <div class="photoshop"><span>90%</span></div>
-        </div><h2>ILLUSTRATOR</h2>
+        </div>
+        <h2>ILLUSTRATOR</h2>
         <div class="progress-bar">
           <div class="illustrator"><span>60%</span></div>
         </div>
 
       </div>
-  
+
   </section>
 
 
@@ -138,52 +146,57 @@
     <!-- meme generator heading -->
     <div class="meme-heading">
       <h1>Let's break monotony</h1>
-   
+
     </div>
 
     <!-- meme card  -->
     <div>
-        <div class="meme-container">
-            <!-- p tag for memes together with a default meme when page loads -->
-            <p id="memeText" class="memeText">Why don't some couples go to the gym? Because some relationships don't work out!,
-            </p>
+      <div class="meme-container">
+        <!-- p tag for memes together with a default meme when page loads -->
+        <p id="memeText" class="memeText">Why don't some couples go to the gym? Because some relationships don't work
+          out!,
+        </p>
 
-            <!-- button for generating meme -->
-            <button class="meme-btn" id="memeBtn" onclick='generateMeme()' >Generate meme😂</button>
-        </div>
+        <!-- button for generating meme -->
+        <button class="meme-btn" id="memeBtn" onclick='generateMeme()'>Generate meme😂</button>
+      </div>
     </div>
 
-</section>
+  </section>
 
-<!-- Interests section -->
+  <!-- Interests section -->
 
-<section id="interests" class="interests">
-  
+  <section id="interests" class="interests">
+
     <h2>My Interests</h2>
- 
-  <div class="interests-container">
-    <div class="interest">
-      <i class="fas fa-laptop-code"></i>
-      <h3>Tech & Coding</h3>
-      <p>I love exploring new technologies, coding, and building innovative projects. Whether it's working on a web app or automating tasks, technology fuels my creativity.</p>
+
+    <div class="interests-container">
+      <div class="interest">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Tech & Coding</h3>
+        <p>I love exploring new technologies, coding, and building innovative projects. Whether it's working on a web
+          app or automating tasks, technology fuels my creativity.</p>
+      </div>
+      <div class="interest">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Digital Art</h3>
+        <p>Creating digital art and manipulating photos in Photoshop is a passion of mine. I enjoy experimenting with
+          different styles and techniques to produce unique artwork.</p>
+      </div>
+      <div class="interest">
+        <i class="fas fa-network-wired"></i>
+        <h3>Networking</h3>
+        <p>Building connections and networking with professionals in the tech industry helps me stay updated with the
+          latest trends and opportunities. I believe in the power of collaboration and learning from others.</p>
+      </div>
+      <div class="interest">
+        <i class="fas fa-book"></i>
+        <h3>Continuous Learning</h3>
+        <p>I'm always eager to learn new skills and enhance my knowledge. Whether it's through online courses, books, or
+          practical projects, I believe in lifelong learning to stay ahead in the ever-evolving tech landscape.</p>
+      </div>
     </div>
-    <div class="interest">
-      <i class="fas fa-paint-brush"></i>
-      <h3>Digital Art</h3>
-      <p>Creating digital art and manipulating photos in Photoshop is a passion of mine. I enjoy experimenting with different styles and techniques to produce unique artwork.</p>
-    </div>
-    <div class="interest">
-      <i class="fas fa-network-wired"></i>
-      <h3>Networking</h3>
-      <p>Building connections and networking with professionals in the tech industry helps me stay updated with the latest trends and opportunities. I believe in the power of collaboration and learning from others.</p>
-    </div>
-    <div class="interest">
-      <i class="fas fa-book"></i>
-      <h3>Continuous Learning</h3>
-      <p>I'm always eager to learn new skills and enhance my knowledge. Whether it's through online courses, books, or practical projects, I believe in lifelong learning to stay ahead in the ever-evolving tech landscape.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -227,7 +240,8 @@
         <div class="project-content">
           <h3>My main Portfolio website</h3>
           <p>
-            This is my main portfolio website. I created it using HTML,CSS and Javascript. I also used Bootstrap to add some Juice.
+            This is my main portfolio website. I created it using HTML,CSS and Javascript. I also used Bootstrap to add
+            some Juice.
           </p>
           <a href="https://lemayianisaac.netlify.app/" class="btn" target="_blank">View Project</a>
         </div>
@@ -249,195 +263,205 @@
           <div class="project-content">
             <h3>TodoList pro</h3>
             <p>
-              This application help users to add their todo's. Its meant for productivity. I created with Javascript and CSS.
+              This application help users to add their todo's. Its meant for productivity. I created with Javascript and
+              CSS.
             </p>
             <a href="https://advanced-todo-pro.netlify.app/" class="btn" target="_blank">View Project</a>
           </div>
         </div>
 
-      <div class="project-card">
-        <img src="images/Jokes generator.PNG" alt="Project 1" />
-        <div class="project-content">
-          <h3>Jokes generator site</h3>
-          <p>
-            Developed with HTML, CSS, and JavaScript. This project showcases a
-            clean and modern UI for an Online digital clock.
-          </p>
-          <a href="https://jokesweb.netlify.app/" class="btn" target="_blank">View Project</a>
+        <div class="project-card">
+          <img src="images/Jokes generator.PNG" alt="Project 1" />
+          <div class="project-content">
+            <h3>Jokes generator site</h3>
+            <p>
+              Developed with HTML, CSS, and JavaScript. This project showcases a
+              clean and modern UI for an Online digital clock.
+            </p>
+            <a href="https://jokesweb.netlify.app/" class="btn" target="_blank">View Project</a>
+          </div>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="images\Responsive pricing cards.PNG" alt="Project 2" />
-        <div class="project-content">
-          <h3>Responsive Pricing cards</h3>
-          <p>
-            Responsive pricing cards using HTML and CSS only. This showcase
-            best cards designs for a website.
-          </p>
-          <a href="https://byte-pricing-cards.netlify.app/" target="_blank" class="btn">View Project</a>
+        <div class="project-card">
+          <img src="images\Responsive pricing cards.PNG" alt="Project 2" />
+          <div class="project-content">
+            <h3>Responsive Pricing cards</h3>
+            <p>
+              Responsive pricing cards using HTML and CSS only. This showcase
+              best cards designs for a website.
+            </p>
+            <a href="https://byte-pricing-cards.netlify.app/" target="_blank" class="btn">View Project</a>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img src="images\investwise website.PNG" alt="Project 3" />
-        <div class="project-content">
-          <h3>Investwise Business website</h3>
-          <p>An investment business website using HTML and TailwindCSS</p>
-          <a href="https://investwisesite.netlify.app/" target="_blank" class="btn">View Project</a>
+        <div class="project-card">
+          <img src="images\investwise website.PNG" alt="Project 3" />
+          <div class="project-content">
+            <h3>Investwise Business website</h3>
+            <p>An investment business website using HTML and TailwindCSS</p>
+            <a href="https://investwisesite.netlify.app/" target="_blank" class="btn">View Project</a>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img src="images\nashula media.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>The nashula media website</h3>
-          <p>
-            A clean and sleek website for Nashula media. I created it using
-            wordpress and elementor.
-          </p>
-          <a href="https://thenashulamedia.com/" target="_blank" class="btn">View Project</a>
+        <div class="project-card">
+          <img src="images\nashula media.PNG" alt="Project 4" />
+          <div class="project-content">
+            <h3>The nashula media website</h3>
+            <p>
+              A clean and sleek website for Nashula media. I created it using
+              wordpress and elementor.
+            </p>
+            <a href="https://thenashulamedia.com/" target="_blank" class="btn">View Project</a>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img src="images/kipweb.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Kiprono writes</h3>
-          <p>
-            This website is for Kiprono Lawrence who is an SEO expert. I created it with wordpress
-          </p>
-          <a href="https://kipronowrites.com/" target="_blank" class="btn">View Project</a>
+        <div class="project-card">
+          <img src="images/kipweb.PNG" alt="Project 4" />
+          <div class="project-content">
+            <h3>Kiprono writes</h3>
+            <p>
+              This website is for Kiprono Lawrence who is an SEO expert. I created it with wordpress
+            </p>
+            <a href="https://kipronowrites.com/" target="_blank" class="btn">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <div class="figma-embed">
     <h1>Jikoni Mobile <br> app design</h1>
-    <p>Idesigned this mobile app as an inspiration for local food ordering. I believe I will be working hand in hand with UI/UX designers. I must understand how to use Figma</p>
+    <p>Idesigned this mobile app as an inspiration for local food ordering. I believe I will be working hand in hand
+      with UI/UX designers. I must understand how to use Figma</p>
     <div class="screens">
-      <img src="images/jikoni landing screen.jpg"  class="image-1" alt="">
-    <img src="images/jikoni meals.png" class="image-2" alt="">
+      <img src="images/jikoni landing screen.jpg" class="image-1" alt="">
+      <img src="images/jikoni meals.png" class="image-2" alt="">
     </div>
-    <a  target="_blank" href="https://www.figma.com/design/SiLc2MHZx6FOEgfDKKONsY/Food-delivery-app?node-id=1-639&t=QTpi08DsEtETs3oj-1"><button >Click to check this app</button></a>
+    <a target="_blank"
+      href="https://www.figma.com/design/SiLc2MHZx6FOEgfDKKONsY/Food-delivery-app?node-id=1-639&t=QTpi08DsEtETs3oj-1"><button>Click
+        to check this app</button></a>
 
 
-</div>
+  </div>
 
 
 
-<!-- Graphic designs section -->
-  <section  class="projects" id="projects">
+  <!-- Graphic designs section -->
+  <section class="projects" id="projects">
     <h2>I love Graphic design and Photo manipulation</h2>
     <p>Definitely I have created some</p>
     <div class="posters">
- 
-        <img src="images/design 1.jpeg" alt="Project 3" />
-   
 
-        <img src="images/design 2.jpeg" alt="Project 3" />
+      <img src="images/design 1.jpeg" alt="Project 3" />
 
 
-        <img src="images/design 4.jpeg" alt="Project 3" />
-
-        <img src="images/design 3.jpeg" alt="Project 3" />
+      <img src="images/design 2.jpeg" alt="Project 3" />
 
 
-        <img src="images/design 5.jpeg" alt="Project 3" />
+      <img src="images/design 4.jpeg" alt="Project 3" />
 
-        <img src="images/design 6.jpeg" alt="Project 3" />
+      <img src="images/design 3.jpeg" alt="Project 3" />
 
-        <img src="images/design 8.jpeg" alt="Project 3" />
+
+      <img src="images/design 5.jpeg" alt="Project 3" />
+
+      <img src="images/design 6.jpeg" alt="Project 3" />
+
+      <img src="images/design 8.jpeg" alt="Project 3" />
 
     </div>
   </section>
+
+
 
   <!-- Contact Form Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <div class="contact-details">
-        <div class="contact-item">
-            
-            <span>Email: lemayian.dev@gmail.com</span>
-        </div>
-        <div class="contact-item">
-            
-            <span>Phone: +254798 984 105</span>
-        </div>
-        <div class="contact-item">
-          
-            <span>Address: Nairobi, Kenya</span>
-        </div>
+      <div class="contact-item">
+
+        <span>Email: lemayian.dev@gmail.com</span>
+      </div>
+      <div class="contact-item">
+
+        <span>Phone: +254798 984 105</span>
+      </div>
+      <div class="contact-item">
+
+        <span>Address: Nairobi, Kenya</span>
+      </div>
     </div>
     <form action="submit-form" method="post" class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary-btn">Send Message</button>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary-btn">Send Message</button>
     </form>
-</section>
+  </section>
 
-<!-- Popup when someone clicks submit -->
-<div id="popupMessage" class="popup">
+  <!-- Popup when someone clicks submit -->
+  <div id="popupMessage" class="popup">
     <div class="popup-content">
-        <span class="close-btn">&times;</span>
-        <p>Sorry, I am working to make this form work. Meanwhile, you can reach me at:</p>
-        <p><strong>lemayian.dev@gmail.com</strong></p>
-    </div>
-</div>
-
-
-
-
-
-<!-- Popup when someone scrolls to the middle of the site -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span id="popup-close" class="popup-close">&times;</span>
-    <p>This portfolio project is for a hackathon for Power Learn Project. I hope to win the cash prize. Definitely😂😂</p><br>
-    <p>Click any empty space to remove this PopUp</p>
-
-  </div>
-</div>
-
-
-<!-- Footer code and socilal links -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-logo">
-      <h2>Isaac Lemayian</h2>
-
-    </div>
-    
-    <div class="footer-nav">
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#interests">Interests</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-socials">
-      <a href="https://www.facebook.com/profile.php?id=100085153183346" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/Zack_lem" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/in/isaac-lemayian/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.instagram.com/lemayian.izaac/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <span class="close-btn">&times;</span>
+      <p>Sorry, I am working to make this form work. Meanwhile, you can reach me at:</p>
+      <p><strong>lemayian.dev@gmail.com</strong></p>
     </div>
   </div>
-  
-  <div class="footer-bottom">
-    <p>&copy; 2024 Isaac Lemayian. All rights reserved.</p>
+
+
+
+
+
+  <!-- Popup when someone scrolls to the middle of the site -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="popup-close" class="popup-close">&times;</span>
+      <p>This portfolio project is for a hackathon for Power Learn Project. I hope to win the cash prize. Definitely😂😂
+      </p><br>
+      <p>Click any empty space to remove this PopUp</p>
+
+    </div>
   </div>
-</footer>
+
+
+  <!-- Footer code and socilal links -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2>Isaac Lemayian</h2>
+
+      </div>
+
+      <div class="footer-nav">
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100085153183346" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/Zack_lem" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/isaac-lemayian/" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/lemayian.izaac/" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Isaac Lemayian. All rights reserved.</p>
+    </div>
+  </footer>
 
 
 
 
-
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script src="index.js"></script>
 </body>
 
