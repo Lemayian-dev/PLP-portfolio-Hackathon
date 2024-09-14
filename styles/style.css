@@ -304,6 +304,20 @@ h2 {
         transform: translateY(-5px) rotate(1deg);
     }
 }
+.download-button {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.download-button:hover {
+    background-color: var(--primary-color);
+}
 
 
 /* Programming Languages Section */
@@ -433,8 +447,8 @@ h2 {
 }
 
 .progress-bar div span {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
     border-radius: 50px;
     /* background: #959595; */
     float: right;
@@ -444,6 +458,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
+    padding: 10px;
 }
 
 .html {
@@ -501,43 +517,45 @@ h2 {
 }
 
 .html span {
-    border: 1px solid #e91e63;
+    background-color: #e91e63;
 }
 
 .css span {
-    border: 1px solid #cddc39;
+    background-color: #b5c718;
 }
 
 .javascript span {
-    border: 1px solid #00bcd4;
+    background-color: #00bcd4;
 }
 
 .python span {
-    border: 1px solid #ffeb3b;
+    
+    background-color: #b5c718;
 }
 
 .sql span {
-    border: 1px solid #3ba7ff;
+    background-color: #3ba7ff;
 }
 
 .git span {
-    border: 1px solid #157409;
+    background-color: #157409;
 }
 
 .wordpress span {
-    border: 1px solid #740966;
+    /* border: 1px solid #740966; */
+    background-color: #740966;
 }
 
 .figma span {
-    border: 1px solid #740966;
+    background-color: #067e78;
 }
 
 .photoshop span {
-    border: 1px solid #9c27b0;
+    background-color: #9c27b0;
 }
 
 .illustrator span {
-    border: 1px solid #e46a07;
+    background-color: #e46a07;
 }
 
 

@@ -84,3 +84,11 @@ window.addEventListener("click", function (event) {
     popup.style.display = "none";
   }
 });
+
+// Resume download functionality
+document.getElementById('download-btn').addEventListener('click', function() {
+  var link = document.createElement('a');
+  link.href = 'Resume/Isaac Lemayian CV.pdf'; 
+  link.download = 'Your_Resume_Name.pdf'; 
+  link.click();
+});
