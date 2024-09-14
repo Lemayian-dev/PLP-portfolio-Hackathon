@@ -880,7 +880,7 @@ h2 {
 /* Figma embed */
 .figma-embed {
     width: 100%;
-    height: 120vh;
+    height: 160vh;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -1407,16 +1407,16 @@ footer {
     #figma {
         position: absolute;
             width: 100%;
-            max-width: 30px;
-            top: 20%;
+            max-width: 35px;
+            top: 15%;
             left: 20%;
             transform: rotate(-15deg);
     }
     #js {
         position: absolute;
             width: 100%;
-            max-width: 40px;
-            top: 20%;
+            max-width: 50px;
+            top: 15%;
             right: 20%;
             transform: rotate(-15deg);
     }
