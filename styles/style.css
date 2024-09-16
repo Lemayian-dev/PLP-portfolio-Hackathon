@@ -1003,7 +1003,7 @@ h2 {
 
 /* Contact Section */
 .contact {
-    background-color: #1a1f2f;
+    background-color: var(--bg-color);
     text-align: center;
     padding: 50px;
     font-family: 'montserrat';
@@ -1136,7 +1136,7 @@ h2 {
 
 /* Footer Styling */
 footer {
-    background-color: #1a1f2f;
+    background-color: var(--bg-color);
     color: #fff;
     padding: 40px 20px;
     text-align: center;
