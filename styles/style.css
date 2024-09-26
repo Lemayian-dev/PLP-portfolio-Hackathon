@@ -69,7 +69,7 @@ nav {
     position: absolute;
     top: 60px;
     right: 20px;
-    width: 200px;
+    width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
     z-index: 999;
@@ -108,6 +108,30 @@ nav {
     background-color: #fff;
     margin: 4px;
     transition: all 0.3s ease;
+}
+
+.shopBtn {
+    display: flex;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px 8px 20px;
+    font-size: 1rem;
+    gap: 7px;
+    border: none;
+    align-items: center;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.shopBtn img {
+    width: 30px;
+}
+
+.shopBtn:hover {
+    background-color: #e91e63;
 }
 
 /* Hamburger Effect on the mobile phoo0ne */
@@ -1326,6 +1350,18 @@ footer {
         font-size: 1rem;
         margin-bottom: 2rem;
     }
+
+    /*shop button  */
+    .shopBtn {
+        width: 130px;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
 
     /* buttons styling */
     .btn {
