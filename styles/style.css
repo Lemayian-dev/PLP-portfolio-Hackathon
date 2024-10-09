@@ -351,7 +351,7 @@ h2 {
 
 
 /* Programming Languages Section */
-.skills-list {
+/* .skills-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
@@ -378,7 +378,7 @@ h2 {
 }
 
 
-/* skills progress bar */
+/*
 .skills-main {
     width: 100%;
     height: 120vh;
@@ -481,7 +481,6 @@ h2 {
     height: 45px;
     width: 45px;
     border-radius: 50px;
-    /* background: #959595; */
     float: right;
     margin-top: -15px;
     margin-right: -20px;
@@ -573,7 +572,6 @@ h2 {
 }
 
 .wordpress span {
-    /* border: 1px solid #740966; */
     background-color: #740966;
 }
 
@@ -648,7 +646,70 @@ h2 {
     100% {
         width: 60%;
     }
+} */
+.skills-main {
+
+    padding: 2rem 0;
+    background-color: var(--bg-color);
 }
+
+.myskills-headings h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Adjust the size as needed */
+    gap: 1.5rem;
+    /* Adds spacing between items */
+}
+
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transition for hover effect */
+    border-radius: 10px;
+    background-color: #fff;
+    /* Optional: Add a white background to items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    /* Slightly lifts the item on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Increases shadow on hover */
+}
+
+.skill-icon {
+    width: 60px;
+    /* Adjust the size as needed */
+    height: 60px;
+    /* Adjust the size as needed */
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    /* Center text under icons */
+}
+
+
 
 /* jokes generator */
 .Hero-section {
@@ -660,14 +721,6 @@ h2 {
 
 }
 
-
-/* the meme generator heading */
-/* .Hero-section h1 {
-    font-size: 30px;
-    position: relative;
-    text-align: top;
-    margin-top: -460px;
-} */
 
 .meme-heading {
     margin-top: -400px;
@@ -733,7 +786,7 @@ h2 {
 }
 
 .meme-container:hover {
-    box-shadow: 2px 2px 300px var(--primary-color);
+    box-shadow: 1px 1px 50px var(--primary-color);
 
 }
 
@@ -980,34 +1033,52 @@ h2 {
 }
 
 /* Reviews Section Styles */
+/* General styles for the reviews section */
 .reviews {
-    width: 100%;
-    height: 70vh;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
 }
 
 .reviews-section {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 0 auto;
-
+    text-align: center;
 }
 
-.reviews-section h2 {
-    text-align: center;
+h2 {
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    color: #333;
+}
+
+.review-carousel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .review {
-    margin-bottom: 1.5rem;
+    background-color: #ffffff;
     padding: 1rem;
-    border-radius: 4px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review-image {
+    width: 80px;
+    /* Make sure width and height are the same */
+    height: 80px;
+    /* Make sure width and height are the same */
+    border-radius: 50%;
+    /* This makes the image round */
+    margin-bottom: 1rem;
+    object-fit: cover;
+    /* Ensures the image covers the circle without distortion */
 }
 
 .review-text {
@@ -1016,10 +1087,58 @@ h2 {
 }
 
 .review-author {
+    font-weight: bold;
+    color: #333;
     margin-top: 0.5rem;
-    font-style: italic;
-    color: #888;
 }
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-nav button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    /* Adjust size as needed */
+    color: #007BFF;
+    /* Icon color */
+    margin: 0 1rem;
+}
+
+.carousel-nav button:hover {
+    color: #0056b3;
+    /* Change color on hover */
+}
+
+
+/* Add some arrows for navigation */
+.carousel-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.carousel-nav button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.carousel-nav button:hover {
+    background-color: #555;
+}
+
 
 /* Responsive Design */
 
@@ -1161,66 +1280,178 @@ h2 {
 /* Footer Styling */
 footer {
     background-color: var(--bg-color);
-    color: #fff;
+    /* Dark background */
+    color: #ffffff;
+    /* White text */
     padding: 40px 20px;
+    /* Padding for the footer */
     text-align: center;
+    /* Center align text */
 }
 
 .footer-content {
+    max-width: 800px;
+    /* Max width for the content */
+    margin: 0 auto;
+    /* Center the content */
+}
+
+.footer-header h2 {
+    font-size: 28px;
+    /* Title size */
+    margin-bottom: 10px;
+    /* Space below title */
+}
+
+.footer-header p {
+    font-size: 16px;
+    /* Text size */
+    margin-bottom: 20px;
+    /* Space below text */
+}
+
+.footer-buttons {
+    margin-bottom: 20px;
+    /* Space below buttons */
+}
+
+.contact {
+    height: 60vh;
+    width: 90%;
+    background-color: var(--bg-color);
+    /* Dark background */
+    color: #ffffff;
+    /* Text color */
+    padding: 40px 20px;
+    /* Spacing around the section */
+    text-align: center;
+    /* Center text */
+    border-radius: 10px;
+    /* Rounded corners for the section */
+    box-shadow: 0 4px 20px var(--primary-color);
+    /* Shadow for depth */
+    margin: 20px;
+    /* Margin for spacing from other sections */
+}
+
+.contact h2 {
+    font-size: 2rem;
+    /* Larger font for the heading */
+    margin-bottom: 20px;
+    /* Space below the heading */
+}
+
+.contact-details {
     display: flex;
+    /* Use flexbox for layout */
     flex-direction: column;
+    /* Column layout */
     align-items: center;
-    gap: 20px;
+    /* Center items */
+    gap: 15px;
+    /* Space between items */
+    margin-bottom: 30px;
+    /* Space below contact details */
 }
 
-.footer-logo h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
+.contact-item {
+    font-size: 1.2rem;
+    /* Text size for contact details */
 }
 
-
-
-.footer-nav .footer-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.footer-links li a {
+.contact-item a {
+    color: #4dc3f0;
+    /* Link color */
     text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-    transition: color 0.3s;
+    /* Remove underline */
 }
 
-.footer-links li a:hover {
-    color: var(--primary-color);
+.contact-item a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+.footer-buttons {
+    margin-top: 20px;
+    /* Space above buttons */
+}
+
+.contact-button {
+    background-color: var(--primary-color);
+    /* Button color */
+    color: #ffffff;
+    /* Button text color */
+    padding: 10px 20px;
+    /* Padding for the button */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* Remove underline */
+    transition: background-color 0.3s;
+    /* Smooth transition */
+}
+
+.contact-button:hover {
+    background-color: #0d99ff;
+    /* Darker shade on hover */
+}
+
+
+.footer-nav {
+    margin-bottom: 20px;
+    /* Space below nav */
+}
+
+.footer-links {
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove padding */
+}
+
+.footer-links li {
+    display: inline;
+    /* Display links inline */
+    margin: 0 10px;
+    /* Space between links */
+}
+
+.footer-links a {
+    color: #ffffff;
+    /* Link color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
 }
 
 .footer-socials {
-    display: flex;
-    gap: 15px;
+    margin: 20px 0;
+    /* Space around socials */
 }
 
 .footer-socials a {
-    color: #fff;
-    font-size: 1.2rem;
-    transition: color 0.3s;
+    color: #ffffff;
+    /* Social icon color */
+    margin: 0 10px;
+    /* Space between icons */
 }
 
-.footer-socials a:hover {
-    color: var(--primary-color);
-}
-
-/* Footer Bottom */
 .footer-bottom {
-    margin-top: 20px;
+    border-top: 1px solid #444;
+    /* Light border on top */
+    padding-top: 10px;
+    /* Padding on top */
 }
 
 .footer-bottom p {
-    font-size: 0.9rem;
-    color: #bbb;
+    font-size: 14px;
+    /* Bottom text size */
 }
+
 
 /* Responsive Layout */
 @media (max-width: 768px) {
@@ -1380,19 +1611,24 @@ footer {
 
     /* skills mobile responsiveness */
     .skills-main {
-        /* magin-top: 0px; */
+
         width: 100%;
-        height: 150vh;
-        /* margin-bottom: 40px; */
-        display: flex;
-        flex-direction: column;
-        /* background-color: white; */
+        height: 130vh;
+
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Adjust the size as needed */
+        gap: 1.5rem;
+        /* Adds spacing between items */
     }
 
     .container {
-        margin-top: 80px;
+        margin-top: 50px;
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         background-color: var(--bg-color);
         display: flex;
         align-items: center;
@@ -1499,15 +1735,15 @@ footer {
 
     /* reviews section code for mobile */
     .reviews-section {
-        padding: 1rem;
+        padding: 1.5rem;
+        max-width: 100%;
     }
 
-    .review {
-        padding: 0.75rem;
-    }
 
-    .review-text {
-        font-size: 0.9rem;
+    .review-carousel {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
 

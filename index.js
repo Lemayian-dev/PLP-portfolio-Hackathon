@@ -86,9 +86,37 @@ window.addEventListener("click", function (event) {
 });
 
 // Resume download functionality
-document.getElementById('download-btn').addEventListener('click', function() {
-  var link = document.createElement('a');
-  link.href = 'Resume/Isaac Lemayian CV.pdf'; 
-  link.download = 'Your_Resume_Name.pdf'; 
+document.getElementById("download-btn").addEventListener("click", function () {
+  var link = document.createElement("a");
+  link.href = "Resume/Isaac Lemayian CV.pdf";
+  link.download = "Your_Resume_Name.pdf";
   link.click();
+});
+
+// reviews section
+
+// Reviews section functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const reviews = document.querySelectorAll(".review");
+  let currentReview = 0;
+
+  // Show the first review by default
+  reviews[currentReview].classList.add("active");
+
+  // Function to change reviews
+  function changeReview(direction) {
+    reviews[currentReview].classList.remove("active");
+    currentReview =
+      (currentReview + direction + reviews.length) % reviews.length;
+    reviews[currentReview].classList.add("active");
+  }
+
+  // Add event listeners for buttons
+  document.querySelector(".prev").addEventListener("click", () => {
+    changeReview(-1); // Show previous review
+  });
+
+  document.querySelector(".next").addEventListener("click", () => {
+    changeReview(1); // Show next review
+  });
 });
