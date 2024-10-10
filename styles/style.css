@@ -1620,6 +1620,10 @@ footer {
         height: 200vh;
     }
 
+    .myskills-headings h2 {
+        margin-bottom: 1.5rem;
+    }
+
     .skills {
         display: grid;
         grid-template-columns: 1fr 1fr;
