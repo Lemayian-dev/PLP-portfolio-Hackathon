@@ -1223,14 +1223,37 @@ h2 {
     align-items: center;
 }
 
+.popup-img {
+    width: 450px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
 .popup-content {
     background: #fff;
     color: black;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    max-width: 400px;
+    max-width: 500px;
     width: 80%;
+}
+
+.wp-register {
+    width: 150px;
+    height: 30px;
+    margin: 15px 0 15px 0;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+
+.wp-register a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+
 }
 
 .close-btn {
