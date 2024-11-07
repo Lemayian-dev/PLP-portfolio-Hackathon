@@ -1646,6 +1646,7 @@ footer {
     .skills-main {
         width: 100%;
         height: auto;
+        margin: 30px 0px 30px 0px;
     }
 
     .myskills-headings h2 {
