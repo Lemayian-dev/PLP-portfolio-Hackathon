@@ -119,7 +119,7 @@ nav {
     gap: 7px;
     border: none;
     align-items: center;
-    width: 150px;
+    width: 100px;
     height: auto;
     border-radius: 10px;
     margin-left: 16px;
@@ -1613,7 +1613,7 @@ footer {
 
     /*shop button  */
     .shopBtn {
-        width: 130px;
+        width: 100px;
         height: auto;
         border-radius: 10px;
         margin-left: 16px;
