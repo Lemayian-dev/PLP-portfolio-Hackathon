@@ -947,7 +947,24 @@ h3 {
     color: var(--primary-color);
     border: 1px solid black;
 }
-
+.figmaBTN {
+    text-decoration: none;
+    color: white;
+    background-color: #F84700;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+.jikoniapp {
+    width: 50vw;
+}
+.FigProjectHeading {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+}
 .project-card {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -966,7 +983,7 @@ h3 {
 
 .project-card img {
     width: 100%;
-    height: 200px;
+    height: 350px;
     object-fit: cover;
 }
 
@@ -1562,6 +1579,7 @@ footer {
 
 /* Desktop additional layouth Layout */
 @media (min-width: 768px) {
+    
     .nav-links {
         display: flex;
         /* Show links by default on desktop */
@@ -1596,6 +1614,13 @@ footer {
 
 /* tables and mobile phones design */
 @media (max-width: 768px) {
+    .figmaBTN { 
+        margin-top: -10px;
+        margin-bottom: 50px;
+    }
+    .jikoniapp {
+        width: 400px;
+    }
     .hero-content img {
         width: 80%;
         margin-top: 60px;
