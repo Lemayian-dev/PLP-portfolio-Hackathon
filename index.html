@@ -7,6 +7,7 @@
   <title>Isaac Lemayian Portfolio</title>
   <link rel="icon" href="images/portfolio image.jpeg">
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/form.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -284,7 +285,20 @@
   <section class="projects" id="projects">
     <h2>Websites I have Created</h2>
     <!-- <p>Here are some of the website projects I created for clients</p> -->
+
     <div class="projects-container">
+      <div class="project-card">
+        <img src="images/Form Builder.JPG" alt="Project 4" />
+        <div class="project-content">
+          <h3>Karen AGC Form Builder</h3>
+          <p>
+            A software to help Karen AGC church to create forms for events and
+            collect data from the congregation. The software is built using React,
+            Typescript, Tailwind CSS and Supabase.
+          </p>
+          <a href="https://forms.karenagc.org/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
       <!-- gratia chicken farm website -->
       <div class="project-card">
         <img src="images/Gratia Chicken farm.PNG" alt="Project 4" />
@@ -292,21 +306,51 @@
           <h3>Gratia Farm</h3>
           <p>
             A farm that sells and delivers poultry and dairy goat products.
+            Created using WordPress and Elementor.
+            The website is responsive and has a clean design.
           </p>
           <a href="https://gratiafarms.co.ke/" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <!-- Royal estates  -->
-      <!-- <div class="project-card">
-        <img src="images/Royalestates.PNG" alt="Project 4" />
+      <div class="project-card">
+        <img src="images/Lost and Found Items.JPG" alt="Project 4" />
         <div class="project-content">
-          <h3>Royal Estates</h3>
+          <h3>Lost and Found Items</h3>
           <p>
-            A real estate company website listing properties such as studio apartments, villas and modern apartments.
+            A website that helps people to find lost items and also report lost
+            items for Karen AGC church. The web app was built using PHP, MySQL and
+            Bootstrap.
           </p>
-          <a href="https://royalestates.ct.ws/" target="_blank" class="btn">View Project</a>
+          <a href="https://lostitems.karenagc.org//" target="_blank" class="btn">View Project</a>
         </div>
-      </div> -->
+      </div>
+      <div class="project-card">
+        <img src="images/Qr code generator.JPG" alt="Project 4" />
+        <div class="project-content">
+          <h3>Premium QR Code Generator</h3>
+          <p>
+            A QR code generator that allows users to create and customize QR codes
+            for various purposes. The web app was built using React, Tailwind CSS
+            and NextJs.
+          </p>
+          <a href="https://qr.karenagc.org/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- Hadel motors -->
+      <div class="project-card">
+        <img src="images/Hadel Motors.JPG" alt="Project 4" />
+        <div class="project-content">
+          <h3>Hadel Motors</h3>
+          <p>
+            A car dealership website that sells and delivers cars to customers.
+            Created using WordPress and Elementor.
+            The website is responsive and has a clean design.
+          </p>
+          <a href="https://hadelmotors.com/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <img src="images/karenagc.PNG" alt="Project 4" />
         <div class="project-content">
@@ -434,7 +478,7 @@
   </section>
 
   <!-- Figma project -->
-  <section class="projects" id="projects">
+  <!-- <section class="projects" id="projects">
     <h2>UI/UX Projects</h2>
     <p class="FigProjectHeading">Jikoni Mobile App</p>
     <img src="images/Figma Jikoni.png" class="jikoniapp" alt="jikoni">
@@ -444,7 +488,7 @@
     <img src="images/Neon UI.png" class="jikoniapp" alt="Neon music app">
     <p class="FigProjectHeading">Smart Home App</p>
     <img src="images/Smart Home automation app.png" class="jikoniapp" alt="Smart Home automation app">
-  </section>
+  </section> -->
 
 
   <!-- Interests section -->
@@ -528,21 +572,25 @@
   <section class="contact" id="contact">
     <h2>Let's Get in Touch</h2>
     <div class="contact-details">
-      <div class="contact-item">
-        <span>Email: <a href="mailto:lemayian.dev@gmail.com">lemayian.dev@gmail.com</a></span>
+      <div class="contact-form-wrapper">
+        <form id="contactForm" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Your message:
+            <textarea name="message" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <p id="contact-form-status"></p>
+        </form>
+        <div id="contact-form-thankyou" style="display:none;">
+          <p>Thank you for reaching out! I'll get back to you soon.</p>
+        </div>
       </div>
-      <div class="contact-item">
-        <span>Phone: <a href="tel:+254798984105">+254798 984 105</a></span>
-      </div>
-      <div class="contact-item">
-        <span>Address: Nairobi, Kenya</span>
-      </div>
-    </div>
-    <div class="footer-buttons">
-      <a href="mailto:lemayian.dev@gmail.com" class="contact-button">Say Hello</a>
     </div>
   </section>
-
 
   <!-- Popup when someone clicks submit -->
   <div id="popupMessage" class="popup">
@@ -553,42 +601,28 @@
     </div>
   </div>
 
-  <!-- Meme generator project to break monotony -->
-  <section class="Hero-section">
-    <!-- meme generator heading -->
-    <div class="meme-heading">
-      <h1>Let's Break Monotony </h1>
-    </div>
-
-    <!-- meme card  -->
-    <div>
-      <div class="meme-container">
-        <p id="memeText" class="memeText">Why don't some couples go to the gym? Because some relationships don't work
-          out!,
-        </p>
-        <button class="meme-btn" id="memeBtn" onclick='generateMeme()'>Generate meme</button>
-      </div>
-    </div>
-
-  </section>
-
-
-
   <!-- Popup when someone scrolls to the middle of the site -->
   <div id="popup" class="popup">
     <div class="popup-content">
       <span id="popup-close" class="popup-close">&times;</span>
-      <!-- <img class="popup-img" src="images/Wordpress developments course.jpg" alt=""> -->
-      <p>Let me actualize your dream. Hit me up in my email
-        <br>
-      </p>
-      <button class="wp-register"><a href="https://forms.gle/pTjT5Q1ezb5XkVee7" target="_blank">Contact
-        </a></button><br>
-      <p>Click any empty space to clear this PopUp</p>
-
+      <h2>Contact Me</h2>
+      <form id="popupContactForm" method="POST">
+        <label>
+          Your email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Your message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+        <p id="popup-contact-form-status"></p>
+      </form>
+      <div id="popup-contact-form-thankyou" style="display:none;">
+        <p>Thank you for reaching out! I'll get back to you soon.</p>
+      </div>
     </div>
   </div>
-
 
   <!-- Footer code and socilal links -->
   <footer>
@@ -624,25 +658,7 @@
     </div>
   </footer>
 
-<!-- Video ask floating -->
-  <!-- Add the code below inside the <body> tags of your HTML page -->
-<!-- <script>
-  window.VIDEOASK_EMBED_CONFIG = {
-    "kind": "widget",
-    "url": "https://www.videoask.com/fl3ufd7tp",
-    "options": {
-      "widgetType": "VideoThumbnailWindowTall",
-      "text": "",
-      "backgroundColor": "#FA6B05",
-      "position": "bottom-right",
-      "dismissible": false,
-      "videoPosition": "center center"
-    }
-  }
-  </script>
-  <script src="https://www.videoask.com/embed/embed.js"></script> -->
-  <!-- Important!!! In order to allow your videoask to open up on the same page when interacting with the widget, your website must use the secure https:// protocol (i.e have an SSL certificate). Otherwise, when clicking the widget, a new tab will be automatically opened in the browser.
-  -->
+
 
 
 
@@ -650,6 +666,73 @@
 
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script src="index.js"></script>
+  <script>
+    // AJAX for main contact form
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const status = document.getElementById("contact-form-status");
+        const thankyou = document.getElementById("contact-form-thankyou");
+        const data = new FormData(contactForm);
+        fetch("https://formspree.io/f/mqaqyljj", {
+          method: "POST",
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            status.innerHTML = "";
+            contactForm.style.display = "none";
+            thankyou.style.display = "block";
+            contactForm.reset();
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+              } else {
+                status.innerHTML = "Oops! There was a problem submitting your form";
+              }
+            });
+          }
+        }).catch(() => {
+          status.innerHTML = "Oops! There was a problem submitting your form";
+        });
+      });
+    }
+
+    // AJAX for popup contact form
+    const popupContactForm = document.getElementById("popupContactForm");
+    if (popupContactForm) {
+      popupContactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const status = document.getElementById("popup-contact-form-status");
+        const thankyou = document.getElementById("popup-contact-form-thankyou");
+        const data = new FormData(popupContactForm);
+        fetch("https://formspree.io/f/mqaqyljj", {
+          method: "POST",
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            status.innerHTML = "";
+            popupContactForm.style.display = "none";
+            thankyou.style.display = "block";
+            popupContactForm.reset();
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+              } else {
+                status.innerHTML = "Oops! There was a problem submitting your form";
+              }
+            });
+          }
+        }).catch(() => {
+          status.innerHTML = "Oops! There was a problem submitting your form";
+        });
+      });
+    }
+  </script>
 </body>
 
 </html>

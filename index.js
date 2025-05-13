@@ -64,16 +64,20 @@ document.addEventListener("DOMContentLoaded", function () {
       popup.style.display = "none";
     }
   });
+
+  // Handle popup form submission
+  const popupContactForm = document.getElementById("popupContactForm");
+  if (popupContactForm) {
+    popupContactForm.addEventListener("submit", function (event) {
+      // Optionally, you can show a thank you message or close the popup
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 500);
+    });
+  }
 });
 
 // code for the popup on contact form
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    document.getElementById("popupMessage").style.display = "flex";
-  });
-
 document.querySelector(".close-btn").addEventListener("click", function () {
   document.getElementById("popupMessage").style.display = "none";
 });
