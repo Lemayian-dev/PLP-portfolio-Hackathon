@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.getElementById("popup-close");
   let hasShown = false;
 
+
+// Show the popup when the user scrolls to the middle of the page
   function checkScroll() {
     const scrollPosition = window.scrollY + window.innerHeight;
     const middleOfPage = document.documentElement.scrollHeight / 2;
@@ -98,6 +100,7 @@ document.getElementById("download-btn").addEventListener("click", function () {
 });
 
 // reviews section
+
 
 // Reviews section functionality
 document.addEventListener("DOMContentLoaded", () => {

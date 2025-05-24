@@ -133,7 +133,6 @@ nav {
 .shopBtn:hover {
   background-color: #e91e63;
 }
-
 /* Hamburger Effect on the mobile phoo0ne */
 .menu-toggle.active .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);

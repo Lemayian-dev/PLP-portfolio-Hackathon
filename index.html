@@ -283,8 +283,8 @@
 
   <!-- Projects I have done  -->
   <section class="projects" id="projects">
-    <h2>Websites I have Created</h2>
-    <!-- <p>Here are some of the website projects I created for clients</p> -->
+    <h2>Websites</h2>
+    <p>Here are some of the website projects I created for clients</p>
 
     <div class="projects-container">
       <div class="project-card">
@@ -313,15 +313,40 @@
         </div>
       </div>
       <div class="project-card">
-        <img src="images/Lost and Found Items.JPG" alt="Project 4" />
+        <img src="images/wedding.JPG" alt="Project 4" />
         <div class="project-content">
-          <h3>Lost and Found Items</h3>
+          <h3>Bride by Zahra</h3>
           <p>
-            A website that helps people to find lost items and also report lost
-            items for Karen AGC church. The web app was built using PHP, MySQL and
-            Bootstrap.
+            This is a website for Bride by Zahra which is a bridal shop that sells wedding dresses and accessories.
+            It has an online shop where users can buy dresses and accessories.
           </p>
-          <a href="https://lostitems.karenagc.org//" target="_blank" class="btn">View Project</a>
+          <a href="https://bridebyzahra.com/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/kinfolk.JPG" alt="Project 4" />
+        <div class="project-content">
+          <h3>Kinfolks Home</h3>
+          <p>
+
+            A website for Kinfolks Home which is a real estate company that sells and construct real estate houses.
+            It is based in Nairobi, Kenya.
+
+          </p>
+          <a href="https://kinsfolkshomes.com/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/car.JPG" alt="Project 4" />
+        <div class="project-content">
+          <h3>DriversMartMotors</h3>
+          <p>
+            A car dealership website that sells and delivers cars to customers.
+            Created using WordPress and Elementor.
+            The website is responsive and has a clean design.
+
+          </p>
+          <a href="https://www.driversmartmotors.com/" target="_blank" class="btn">View Project</a>
         </div>
       </div>
       <div class="project-card">
@@ -694,13 +719,13 @@
               }
             });
           }
+          // this is to close the popup when the form is submitted
         }).catch(() => {
           status.innerHTML = "Oops! There was a problem submitting your form";
         });
       });
     }
 
-    // AJAX for popup contact form
     const popupContactForm = document.getElementById("popupContactForm");
     if (popupContactForm) {
       popupContactForm.addEventListener("submit", async function (event) {
@@ -713,6 +738,7 @@
           body: data,
           headers: { 'Accept': 'application/json' }
         }).then(response => {
+          // console.log();
           if (response.ok) {
             status.innerHTML = "";
             popupContactForm.style.display = "none";
