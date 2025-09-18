@@ -8,14 +8,14 @@
   <link rel="icon" href="images/portfolio image.jpeg">
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/form.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles/animations.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- adding calendly so that a person can schedule a 30 minutes with me -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <!-- Google tag (gtag.js) Google analytics-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWRQR0BTNT"></script>
@@ -45,6 +45,9 @@
 
   <!-- HEADER CODE STYLING -->
   <header>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
     <nav>
       <div class="logo">
         <a href=""><i class="fas fa-code"></i></a>
@@ -53,15 +56,17 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <!-- <li><a href="#interests">Interests</a></li> -->
-        <!-- <li><a href="#education">Education</a></li> -->
         <li><a href="#projects">Projects</a></li>
-        <!-- <li><a href="#contact">Contact</a></li> -->
-        <!-- shop button -->
         <li><a href="#contact">
             <div class="shopBtn">Contact</div>
-            <!-- <img src="images/shopping-bag.png" alt="shop icon"> -->
-      </ul></a></li>
+        </a></li>
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
       <!-- HAMBUGER MENU -->
       <div class="menu-toggle" id="menu-toggle">
         <span class="bar"></span>
@@ -71,35 +76,76 @@
     </nav>
   </header>
 
+
   <img src="images/figma-icon.png" id="figma" alt="figma icon">
   <img src="images/java-script-text-on-plate.png" id="js" alt="javascript-icon">
 
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <div class="hero-background">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    
     <div class="hero-content">
-      <img src="images\portfolio image.jpeg" alt="">
-      <h1>Hi there 👋🏼 <br> I'm Isaac Lemayian</h1>
-      <p>
-        As a developer and designer, I create impactful digital solutions that help individuals and
+      <div class="hero-image-container">
+        <img src="images/Portrait1.jpg" alt="Isaac Lemayian - Developer & Designer" class="hero-image">
+      </div>
+      
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="greeting">Hi there 👋🏼</span>
+          <span class="name">I'm Isaac Lemayian</span>
+        </h1>
+        <p class="hero-description">
+          As a <span class="highlight">developer</span> and <span class="highlight">designer</span>, I create impactful digital solutions that help individuals and
         businesses enhance their online presence, boost engagement, and drive growth.
       </p>
+        
+       
+        
       <div class="hero-buttons">
-        <a href="#projects" class="btn primary-btn">Projects</a>
-        <!-- <a href="#contact" class="btn secondary-btn">Contact Me</a> -->
-        <!-- Calendly link widget begin -->
+          <a href="#projects" class="btn primary-btn">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         <a href="" class="btn secondary-btn"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/lemayian-dev/30min'});return false;">Schedule
-          a Chat with Me</a>
-        <!-- Calendly link widget end -->
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/lemayian-dev/30min'});return false;">
+            <i class="fas fa-calendar"></i>
+            <span>Schedule a Chat</span>
+          </a>
+        </div>
       </div>
     </div>
+    
+    <!-- Scroll indicator -->
+    <!-- <div class="scroll-indicator">
+      <div class="scroll-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div> -->
   </section>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Projects</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">25+</span>
+      <span class="stat-label">Clients</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">3+</span>
+      <span class="stat-label">Years</span>
+    </div>
+  </div>
 
   <!-- About Section -->
   <section class="about" id="about">
     <div class="about-container">
-      <img src="images/port image 4.jpeg" alt="" />
+      <img src="images/Portrait2.jpg" alt="Isaac Lemayian - About Me" />
       <h2>About Me</h2>
       <p>
         I’m a Developer and Designer passionate about coding, design, and crafting seamless user
@@ -115,129 +161,222 @@
   </section>
 
 
-  <!-- This are some of the skills that I have -->
-  <!-- <section class="skills-main" id="skills">
-
-    <div class="myskills-headings">
-      <h2>My Skills</h2>
-    </div>
-    <div class="container">
-      <div class="skills">
-        <h2>HTML</h2>
-        <div class="progress-bar">
-          <div class="html"><span>80%</span></div>
-        </div>
-        <h2>CSS</h2>
-        <div class="progress-bar">
-          <div class="css"><span>70%</span></div>
-        </div>
-        <h2>JAVASCRIPT</h2>
-        <div class="progress-bar">
-          <div class="javascript"><span>50%</span></div>
-        </div>
-        <h2>PYTHON</h2>
-        <div class="progress-bar">
-          <div class="python"><span>25%</span></div>
-        </div>
-        <h2>SQL</h2>
-        <div class="progress-bar">
-          <div class="sql"><span>50%</span></div>
-        </div>
-        <h2>GIT</h2>
-        <div class="progress-bar">
-          <div class="git"><span>45%</span></div>
-        </div>
-        <h2>WordPress</h2>
-        <div class="progress-bar">
-          <div class="wordpress"><span>75%</span></div>
-        </div>
-        <h2>FIGMA</h2>
-        <div class="progress-bar">
-          <div class="figma"><span>70%</span></div>
-        </div>
-        <h2>PHOTOSHOP</h2>
-        <div class="progress-bar">
-          <div class="photoshop"><span>90%</span></div>
-        </div>
-        <h2>ILLUSTRATOR</h2>
-        <div class="progress-bar">
-          <div class="illustrator"><span>60%</span></div>
-        </div>
-
-      </div>
-
-  </section> -->
-
-
   <!-- skills section -->
   <section class="skills-main" id="skills">
-    <div class="myskills-headings">
+    <div class="myskills-headings animate-on-scroll">
       <h2>Tech Stack & Softwares</h2>
+      <p>Technologies and tools I use to bring ideas to life</p>
     </div>
     <div class="container">
       <div class="skills">
-        <div class="skill-item">
+        <div class="skill-item animate-on-scroll" data-delay="0">
+          <div class="skill-icon-container">
           <img src="icons/icons8-html-48.png" alt="HTML Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>HTML</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">90%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item animate-on-scroll" data-delay="100">
+          <div class="skill-icon-container">
           <img src="icons/icons8-css-48.png" alt="CSS Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>CSS</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">85%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item animate-on-scroll" data-delay="200">
+          <div class="skill-icon-container">
           <img src="icons/icons8-javascript-48.png" alt="JavaScript Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>JavaScript</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">80%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item animate-on-scroll" data-delay="300">
+          <div class="skill-icon-container">
           <img src="icons/icons8-python-48.png" alt="Python Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Python</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70%"></div>
         </div>
-        <div class="skill-item">
-          <img src="images/Dart_logo.png" alt="Python Icon" class="skill-icon">
+            <span class="skill-percentage">70%</span>
+          </div>
+        </div>
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="400">
+          <div class="skill-icon-container">
+            <img src="images/Dart_logo.png" alt="Dart Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Dart</h3>
-        </div>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="65%"></div>
+            </div>
+            <span class="skill-percentage">65%</span>
+          </div>
+        </div> -->
 
-        <div class="skill-item">
+        <div class="skill-item animate-on-scroll" data-delay="500">
+          <div class="skill-icon-container">
           <img src="icons/icons8-sql-60.png" alt="SQL Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>SQL</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
         </div>
-        <div class="skill-item">
-          <img src="icons/icons8-mysql-48.png" alt="SQL Icon" class="skill-icon">
+            <span class="skill-percentage">75%</span>
+          </div>
+        </div>
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="600">
+          <div class="skill-icon-container">
+            <img src="icons/icons8-mysql-48.png" alt="MySQL Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>MySQL</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">70%</span>
+          </div>
+        </div> -->
+        
+        <div class="skill-item animate-on-scroll" data-delay="700">
+          <div class="skill-icon-container">
           <img src="icons/icons8-git-48.png" alt="Git Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Git</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
         </div>
-        <div class="skill-item">
-          <img
-            src="icons/icons8-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites.-48.png"
-            alt="Git Icon" class="skill-icon">
+            <span class="skill-percentage">80%</span>
+          </div>
+        </div>
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="800">
+          <div class="skill-icon-container">
+            <img src="icons/icons8-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites.-48.png" alt="Netlify Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Netlify</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">85%</span>
+          </div>
+        </div> -->
+        
+        <div class="skill-item animate-on-scroll" data-delay="900">
+          <div class="skill-icon-container">
           <img src="icons/icons8-wordpress-48.png" alt="WordPress Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>WordPress</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
         </div>
-        <div class="skill-item">
-          <img src="icons/icons8-webflow-48.png" alt="WordPress Icon" class="skill-icon">
+            <span class="skill-percentage">90%</span>
+          </div>
+        </div>
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="1000">
+          <div class="skill-icon-container">
+            <img src="icons/icons8-webflow-48.png" alt="Webflow Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Webflow</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">75%</span>
+          </div>
+        </div> -->
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="1100">
+          <div class="skill-icon-container">
           <img src="icons/icons8-figma-48.png" alt="Figma Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Figma</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">85%</span>
+          </div>
+        </div> -->
+        
+        <div class="skill-item animate-on-scroll" data-delay="1200">
+          <div class="skill-icon-container">
           <img src="icons/icons8-photoshop-94.png" alt="Photoshop Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Photoshop</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="95%"></div>
         </div>
-        <div class="skill-item">
+            <span class="skill-percentage">95%</span>
+          </div>
+        </div>
+        
+        <!-- <div class="skill-item animate-on-scroll" data-delay="1300">
+          <div class="skill-icon-container">
           <img src="icons/icons8-illustrator-94.png" alt="Illustrator Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
           <h3>Illustrator</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
         </div>
-        <div class="skill-item">
-          <img src="icons/icons8-adobe-indesign-94.png" alt="Illustrator Icon" class="skill-icon">
-          <h3>Indesign</h3>
+            <span class="skill-percentage">80%</span>
+          </div>
+        </div> -->
+        
+        <div class="skill-item animate-on-scroll" data-delay="1400">
+          <div class="skill-icon-container">
+            <img src="icons/icons8-adobe-indesign-94.png" alt="InDesign Icon" class="skill-icon">
+            <div class="skill-glow"></div>
+          </div>
+          <h3>InDesign</h3>
+          <div class="skill-level">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70%"></div>
+            </div>
+            <span class="skill-percentage">70%</span>
+          </div>
         </div>
       </div>
     </div>
@@ -246,242 +385,218 @@
 
 
 
-
-
-
-
-
-  <!-- Educational Background Section -->
-  <!-- <section class="education" id="education">
-    <div class="education-content">
-      <h2>My education</h2>
-      <div class="education-item">
-        <h3>👨🏻‍💻 Software development Bootcamp</h3>
-        <p>Power learn project</p>
-        <p>Its ongoing</p>
-        <p>August 2024 - December 2024</p>
-      </div>
-      <div class="education-item">
-        <h3>👨🏼‍🔬 Bachelors degree in Education Sci (Chemistry & Biology)</h3>
-        <p>Tangaza University</p>
-        <p>2020 - 2024</p>
-        <p>Waiting to graduate this October</p>
-      </div>
-
-      <div class="education-item">
-        <h3>💻 Front-end Development</h3>
-        <p>Free Code Camp</p>
-        <p>2021 - 2022</p>
-      </div>
-      <div class="education-item">
-        <h3>🎨 Graphics Design Certification</h3>
-        <p>Udemy course</p>
-        <p>2020 - 2021</p>
-      </div>
-    </div>
-  </section> -->
-
   <!-- Projects I have done  -->
   <section class="projects" id="projects">
-    <h2>Websites</h2>
+    <div class="projects-header animate-on-scroll">
+      <h2>Featured Projects</h2>
     <p>Here are some of the website projects I created for clients</p>
+      
+      <!-- Project Filter -->
+      <!-- <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="website">Websites</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      </div> -->
+    </div>
 
     <div class="projects-container">
-      <div class="project-card">
-        <img src="KerichoInvest.jpg" alt="Project 4" />
+      <div class="project-card animate-on-scroll" data-category="website">
+        <div class="project-image-container">
+          <img src="KerichoInvest.jpg" alt="Kericho Enterprise Summit Website" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://kerichoinvest.com/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="project-content">
+          <div class="project-tags">
+            <span class="tag">Government</span>
+            <span class="tag">Registration System</span>
+          </div>
           <h3>Kericho Enterprise Summit</h3>
           <p>
-            Government website for a summit that happened in Kericho. My work was to design and build
-            a website that would enable delegates,sponsors and exhibitors to register.
+            Government website for Kericho Enterprise Summit with registration system for delegates, sponsors and exhibitors.
           </p>
-          <a href="https://kerichoinvest.com/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+          </div>
         </div>
       </div>
 
       <!-- HadelPixels -->
-      <div class="project-card">
-        <img src="images/Home-Hadelpixels-Agency.png" alt="Project 4" />
+      <div class="project-card animate-on-scroll" data-category="website">
+        <div class="project-image-container">
+          <img src="images/Home-Hadelpixels-Agency.png" alt="Hadel Pixels Agency Website" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://hadelpixels.com/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="project-content">
+          <div class="project-tags">
+            <span class="tag">Agency</span>
+            <span class="tag">Design & Development</span>
+          </div>
           <h3>Hadel Pixels Inc</h3>
           <p>
-            Me and my friends started a design and development agency. We offer all design
-            and development service including mobile apps and websites. This website is sleek
-            and modern. Check it out.
+            Design and development agency website offering mobile apps and web development services with modern, sleek design.
           </p>
-          <a href="https://hadelpixels.com/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Figma</span>
+          </div>
         </div>
       </div>
+
       <!-- Commerce -->
-      <div class="project-card">
-        <img src="images/sokoFresh-–-Fresh-and-healthy-food-for-you (1).png" alt="Project 4" />
+      <div class="project-card animate-on-scroll" data-category="ecommerce">
+        <div class="project-image-container">
+          <img src="images/sokoFresh-–-Fresh-and-healthy-food-for-you (1).png" alt="SokoFresh E-commerce Platform" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://commerce.hadelmotors.com/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="project-content">
+          <div class="project-tags">
+            <span class="tag">E-commerce</span>
+            <span class="tag">Online Shopping</span>
+          </div>
           <h3>SokoFresh</h3>
           <p>
-            This is an online shop like Naivas and Jumia. The difference is that this software is 
-            sleek and uses the best UI and UX principles. Customers can place orders,
-            track them and pay for them
+            E-commerce platform with sleek UI/UX design. Customers can place orders, track deliveries, and make payments.
           </p>
-          <a href="https://commerce.hadelmotors.com/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>Stripe</span>
+          </div>
         </div>
       </div>
+
       <!-- Form builder -->
-      <div class="project-card">
-        <img src="images/Form Builder.JPG" alt="Project 4" />
+      <div class="project-card animate-on-scroll" data-category="website">
+        <div class="project-image-container">
+          <img src="images/Form Builder.JPG" alt="Karen AGC Form Builder Application" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://forms.karenagc.org/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="project-content">
+          <div class="project-tags">
+            <span class="tag">Web Application</span>
+            <span class="tag">Form Builder</span>
+          </div>
           <h3>Karen AGC Form Builder</h3>
           <p>
             A software to help Karen AGC church to create forms for events and
             collect data from the congregation. The software is built using React,
             Typescript, Tailwind CSS and Supabase.
           </p>
-          <a href="https://forms.karenagc.org/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>Supabase</span>
+          </div>
         </div>
       </div>
-      <!-- gratia chicken farm website -->
-      <div class="project-card">
-        <img src="images/Gratia Chicken farm.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Gratia Farm</h3>
-          <p>
-            A farm that sells and delivers poultry and dairy goat products.
-            Created using WordPress and Elementor.
-            The website is responsive and has a clean design.
-          </p>
-          <a href="https://gratiafarms.co.ke/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="images/wedding.JPG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Bride by Zahra</h3>
-          <p>
-            This is a website for Bride by Zahra which is a bridal shop that sells wedding dresses and accessories.
-            It has an online shop where users can buy dresses and accessories.
-          </p>
-          <a href="https://bridebyzahra.com/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="images/kinfolk.JPG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Kinfolks Home</h3>
-          <p>
 
-            A website for Kinfolks Home which is a real estate company that sells and construct real estate houses.
-            It is based in Nairobi, Kenya.
-
-          </p>
-          <a href="https://kinsfolkshomes.com/" target="_blank" class="btn">View Project</a>
+      <div class="project-card animate-on-scroll" data-category="website">
+        <div class="project-image-container">
+          <img src="images/mediaprojectrequest.png" alt="Project Request Management System" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://mediaprojects.karenagc.org/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div class="project-card">
-        <img src="images/mediaprojectrequest.png" alt="Project 4" />
         <div class="project-content">
-          <h3>Project Request system</h3>
+          <div class="project-tags">
+            <span class="tag">Management System</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
+          <h3>Project Request System</h3>
           <p>
-           I created this for my church media team. It was difficult  for pastors 
+           I created this for my church media team. It was difficult for pastors 
            to request the media team for projects such as posters, banners and videos.
            This software enables the team to assign projects among themselves, collaborate
            and work faster. Notifications are sent through Celcom API.
           </p>
-          <a href="https://mediaprojects.karenagc.org/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>API Integration</span>
+          </div>
         </div>
       </div>
 
-      
-
-      <div class="project-card">
-        <img src="images/karenagc.PNG" alt="Project 4" />
+      <div class="project-card animate-on-scroll" data-category="website">
+        <div class="project-image-container">
+          <img src="images/karenagc.PNG" alt="Karen Africa Gospel Church Website" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://karenagc.org/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                Live Site
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="project-content">
+          <div class="project-tags">
+            <span class="tag">Church Website</span>
+            <span class="tag">Community</span>
+          </div>
           <h3>Karen Africa Gospel Church</h3>
           <p>
             This is a website for Karen AGC church which is a community of believers.
+            Features include event management, sermon archives, and community updates.
           </p>
-          <a href="https://karenagc.org/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="images\nashula media.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>The Nashula Media </h3>
-          <p>
-            A clean and sleek website for Nashula Media. They offer all media services
-            example videography, photography and graphics design.
-          </p>
-          <a href="https://thenashulamedia.com/" target="_blank" class="btn">View Project</a>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>CSS</span>
+          </div>
         </div>
       </div>
 
-      <!-- <div class="project-card">
-        <img src="images/kipweb.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Kiprono Writes</h3>
-          <p>
-            This website is for Kiprono Lawrence who is an SEO and Copywriting expert.
-          </p>
-          <a href="https://kipronowrites.com/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div> -->
-      <div class="project-card">
-        <img src="images/topgeekwriters website.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Topgeekwriters</h3>
-          <p>
-            This website offers academic writing services. Users can register and request services related to writing
-            such as academic papers, theses, dissertations and legal essays.
-          </p>
-          <a href="https://topgeekwriters.com/" target="_blank" class="btn">View Project</a>
-        </div>
+      <!-- View More Button -->
+      <div class="view-more-container">
+        <a href="projects.html" class="view-more-btn">
+          <span>View All Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <!-- <div class="project-card">
-        <img src="images/kendinjeru.com website.PNG" alt="Project 4" />
-        <div class="project-content">
-          <h3>Voice Over Artist</h3>
-          <p>
-            This website showcases professional voice over services specializing
-            in narrations for commercials, documentaries and e-learning videos.
-          </p>
-          <a href="https://kendinjeru.com/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div> -->
-
-      <!-- Media Karen AGC -->
-      <div class="project-card">
-        <img src="images/Media Karen AGC.PNG" alt="Project 3" />
-        <div class="project-content">
-          <h3>Karen AGC Media team</h3>
-          <p>This is a website for KAGC media team. This website contains resources for learning
-            Python programming and Graphic design. Its a digital too for the team to learn and grow.
-          </p>
-          <a href="https://media.karenagc.org/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-      <!-- <div class="project-card">
-        <img src="images/captain Isaac.PNG" alt="js digital clock" />
-        <div class="project-content">
-          <h3>Captain Isaac Trust</h3>
-          <p>
-            This is a medical appeal website for Isaac Onyango, a respected captain with
-            Kenya Airways. Captain Isaac was disgnosed with ALS — a nervous system disease that affects
-            affects nerve cells in the brain and spinal cord.
-
-          </p>
-          <a href="https://captisaactrust.com/" class="btn" target="_blank">View Project</a>
-        </div>
-      </div> -->
-
-
-
-      <!-- <div class="project-card">
-        <img src="images\investwise website.PNG" alt="Project 3" />
-        <div class="project-content">
-          <h3>Investwise Business</h3>
-          <p>An investment business website </p>
-          <a href="https://investwisesite.netlify.app/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div> -->
     </div>
   </section>
 
@@ -490,40 +605,44 @@
 
 
   <!-- Graphic designs section -->
-  <section class="projects" id="projects">
+  <section class="graphic-design" id="graphic-design">
+    <div class="graphic-design-header">
     <h2>Graphic Design</h2>
-    <p>Designs and Manipulations that I have created for clients.</p>
-    <div class="posters">
-            <img src="images/KEIS POSTER 48.jpg" alt="Project 3" />
-                  <!-- <img src="images/Business Expo Karen AGC.jpg" alt="Project 3" /> -->
-
-
-      <img src="images/WhatsApp Image 2024-11-08 at 12.12.34 AM (1).jpeg" alt="Project 3" />
-            <img src="images/German Ambassador - Speaker (1).jpg" alt="Project 3" />
-
-      <!-- <img src="images/Business Expo Karen AGC.jpg" alt="Project 3" /> -->
-      <img src="images/Kenya.png" alt="Project 3" />
-                  <img src="images/Tuimarishe Tujenge1.jpg" alt="Project 3" />
-
-      <img src="images/design 1.jpeg" alt="Project 3" />
-
-      <img src="images/design 8.jpeg" alt="Project 3" />
-      <img src="images/design 2.jpeg" alt="Project 3" />
-      <img src="images/Welcome to church poster colored.jpg" alt="Project 3" />
-
-
-      <img src="images/WhatsApp Image 2024-10-31 at 10.07.27 PM.jpeg" alt="Project 3" />
-
-      <img src="images/design 3.jpeg" alt="Project 3" />
-
-
-      <img src="images/WhatsApp Image 2024-11-08 at 12.24.17 AM.jpeg" alt="Project 3" />
-
-      <img src="images/design 6.jpeg" alt="Project 3" />
-      <!-- <img src="images/WhatsApp Image 2024-11-08 at 12.12.34 AM.jpeg" alt="Project 3" /> -->
-      <!-- <img src="images/Bifold.jpg" alt="Project 3"> -->
-      <!-- <img src="images/Kinza-Cafe-colorful-dishes-menu-design-for-inspiration.jpg" alt="Project 3"> -->
-      <!-- </div><img src="images/8b9864b3374b701542c6bec7a2d714e4.jpg" alt="Project 3" > -->
+      <p>Featured designs and manipulations that I have created for clients.</p>
+    </div>
+    <div class="container">
+      
+      
+      <!-- All Images Container -->
+      <div class="designs-grid">
+        <div class="design-item" onclick="openImageModal('images/KEIS POSTER 48.jpg', 'KEIS Poster Design')">
+          <img src="images/KEIS POSTER 48.jpg" alt="KEIS Poster Design" />
+        </div>
+        <div class="design-item" onclick="openImageModal('images/German Ambassador - Speaker (1).jpg', 'German Ambassador Speaker Poster')">
+          <img src="images/German Ambassador - Speaker (1).jpg" alt="German Ambassador Speaker Poster" />
+        </div>
+        <div class="design-item" onclick="openImageModal('images/Tuimarishe Tujenge1.jpg', 'Tuimarishe Tujenge Poster')">
+          <img src="images/Tuimarishe Tujenge1.jpg" alt="Tuimarishe Tujenge Poster" />
+        </div>
+        <div class="design-item" onclick="openImageModal('images/Welcome to church poster colored.jpg', 'Church Welcome Poster')">
+          <img src="images/Welcome to church poster colored.jpg" alt="Church Welcome Poster" />
+        </div>
+        <div class="design-item" onclick="openImageModal('images/design 1.jpeg', 'Creative Design')">
+          <img src="images/design 1.jpeg" alt="Creative Design" />
+        </div>
+        <div class="design-item" onclick="openImageModal('images/design 2.jpeg', 'Artistic Poster')">
+          <img src="images/design 2.jpeg" alt="Artistic Poster" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- View More Button - Separate Container -->
+    <div class="view-more-container">
+      <a href="graphic-design.html" class="view-more-btn">
+        <span>View All Designs</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
   </section>
 
   <!-- Figma project -->
@@ -617,58 +736,126 @@
 
 
 
-  <!-- Contact Form Section -->
-  <section class="contact" id="contact">
-    <h2>Let's Get in Touch</h2>
-    <div class="contact-details">
-      <div class="contact-form-wrapper">
-        <form id="contactForm" method="POST">
-          <label>
-            Your email:
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            Your message:
-            <textarea name="message" required></textarea>
-          </label>
-          <button type="submit">Send</button>
-          <p id="contact-form-status"></p>
+  <!-- Call to Action Section -->
+  <section class="cta">
+    <div class="cta-container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let's work together to bring your ideas to life with modern, responsive web solutions.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-primary">Get Started</a>
+        <a href="#projects" class="btn-secondary">View My Work</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section class="ftco-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <h2 class="heading-section">Get In Touch</h2>
+          <div class="contact-container">
+            <div class="contact-form-container">
+              <div class="contact-wrap">
+                <h3 class="mb-4">Write us</h3>
+                <div id="form-message-warning" class="mb-4"></div> 
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you!
+                </div>
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" required></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary">
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
         </form>
-        <div id="contact-form-thankyou" style="display:none;">
-          <p>Thank you for reaching out! I'll get back to you soon.</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-container">
+              <div class="info-wrap">
+                <h3>Contact information</h3>
+                <p class="mb-4">Ready to work together? Let's discuss your project!</p>
+                <div class="dbox w-100 d-flex align-items-start">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-envelope"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Email:</span> <a href="mailto:lemayian.dev@gmail.com">lemayian.dev@gmail.com</a></p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-map-marker"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Location:</span> Nairobi, Kenya</p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-clock"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Response Time:</span> Within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Popup when someone clicks submit -->
-  <div id="popupMessage" class="popup">
-    <div class="popup-content">
-      <span class="close-btn">&times;</span>
-      <p>Sorry, I am working to make this form work. Meanwhile, you can reach me at:</p>
-      <p><strong><a href="mailto:lemayian.dev@gmail.com">lemayian.dev@gmail.com</a></strong></p>
-    </div>
-  </div>
+  
 
-  <!-- Popup when someone scrolls to the middle of the site -->
+  <!-- CTA Popup when someone scrolls to the middle of the site -->
   <div id="popup" class="popup">
-    <div class="popup-content">
+    <div class="popup-content cta-popup">
       <span id="popup-close" class="popup-close">&times;</span>
-      <h2>Contact Me</h2>
-      <form id="popupContactForm" method="POST">
-        <label>
-          Your email:
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Your message:
-          <textarea name="message" required></textarea>
-        </label>
-        <button type="submit">Send</button>
-        <p id="popup-contact-form-status"></p>
-      </form>
-      <div id="popup-contact-form-thankyou" style="display:none;">
-        <p>Thank you for reaching out! I'll get back to you soon.</p>
+      <div class="cta-popup-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Ready to Work Together?</h2>
+      <p>Let's create something amazing! I'm here to help bring your ideas to life with beautiful, functional digital solutions.</p>
+      <div class="cta-popup-buttons">
+        <a href="#contact" class="cta-btn primary" onclick="closePopup()">
+          <i class="fas fa-envelope"></i>
+          Get In Touch
+        </a>
+        <a href="projects.html" class="cta-btn secondary" onclick="closePopup()">
+          <i class="fas fa-eye"></i>
+          View My Work
+        </a>
+      </div>
+      <div class="cta-popup-stats">
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24h</span>
+          <span class="stat-label">Response</span>
+        </div>
       </div>
     </div>
   </div>
@@ -677,7 +864,7 @@
   <footer>
     <div class="footer-content">
 
-<!-- just testing -->
+
       <div class="footer-nav">
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
@@ -783,6 +970,17 @@
       });
     }
   </script>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeImageModal()">&times;</span>
+      <img id="modalImage" src="" alt="" />
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

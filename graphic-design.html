@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Portfolio - Isaac Lemayian</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-code"></i></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">
+                    <div class="shopBtn">Contact</div>
+                </a></li>
+                <!-- Theme Toggle -->
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <!-- HAMBUGER MENU -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Graphic Design Header -->
+    <section class="graphic-design-header-section">
+        <div class="container">
+            <div class="graphic-design-hero-content">
+                <h1>Graphic Design Portfolio</h1>
+                <p>Explore my complete collection of graphic design work. From posters and banners to social media graphics and branding materials, each design tells a unique story and serves a specific purpose.</p>
+                <div class="design-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Designs Created</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphic Design Gallery -->
+    <section class="graphic-design-gallery">
+        <div class="container">
+            <div class="designs-grid">
+                <!-- Event Posters -->
+                <div class="design-item">
+                    <img src="images/KEIS POSTER 48.jpg" alt="KEIS Event Poster" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/German Ambassador - Speaker (1).jpg" alt="German Ambassador Speaker Poster" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/Tuimarishe Tujenge1.jpg" alt="Tuimarishe Tujenge Community Event" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/Welcome to church poster colored.jpg" alt="Church Welcome Poster" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <!-- Social Media Designs -->
+                <div class="design-item">
+                    <img src="images/WhatsApp Image 2024-11-08 at 12.12.34 AM (1).jpeg" alt="Social Media Design" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/WhatsApp Image 2024-10-31 at 10.07.27 PM.jpeg" alt="Social Media Design" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/WhatsApp Image 2024-11-08 at 12.24.17 AM.jpeg" alt="Social Media Design" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <!-- Branding Designs -->
+                <div class="design-item">
+                    <img src="images/Kenya.png" alt="Kenya Branding Design" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <!-- Design Portfolio -->
+                <div class="design-item">
+                    <img src="images/design 1.jpeg" alt="Design Portfolio 1" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/design 2.jpeg" alt="Design Portfolio 2" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/design 3.jpeg" alt="Design Portfolio 3" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/design 6.jpeg" alt="Design Portfolio 6" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+
+                <div class="design-item">
+                    <img src="images/design 8.jpeg" alt="Design Portfolio 8" onclick="openImageModal(this.src, this.alt)" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <section class="back-to-home">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/lemayian" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/isaac-lemayian" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/lemayian_dev" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isaac Lemayian. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
