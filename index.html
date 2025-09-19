@@ -4,11 +4,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isaac Lemayian Portfolio</title>
+  <title>Isaac Lemayian - Full Stack Developer & Designer | Portfolio</title>
+  <meta name="description"
+    content="Isaac Lemayian is a passionate full-stack developer and designer specializing in modern web applications, e-commerce solutions, and digital design. View my portfolio of 110+ projects and 25+ satisfied clients." />
+  <meta name="keywords"
+    content="web developer, full stack developer, designer, React, JavaScript, PHP, WordPress, e-commerce, portfolio, Kenya" />
+  <meta name="author" content="Isaac Lemayian" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Isaac Lemayian - Full Stack Developer & Designer" />
+  <meta property="og:description"
+    content="Passionate developer and designer creating impactful digital solutions. 110+ projects completed, 25+ satisfied clients." />
+  <meta property="og:image" content="images/Portrait1.jpg" />
+  <meta property="og:url" content="https://lemayian.dev" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Isaac Lemayian - Full Stack Developer & Designer" />
+  <meta name="twitter:description" content="Passionate developer and designer creating impactful digital solutions." />
+  <meta name="twitter:image" content="images/Portrait1.jpg" />
+
   <link rel="icon" href="images/portfolio image.jpeg">
+  <link rel="canonical" href="https://lemayian.dev" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Isaac Lemayian",
+    "jobTitle": "Full Stack Developer & Designer",
+    "description": "Passionate developer and designer creating impactful digital solutions for businesses and individuals.",
+    "url": "https://lemayian.dev",
+    "image": "https://lemayian.dev/images/Portrait1.jpg",
+    "email": "lemayian.dev@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "Kenya"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/isaac-lemayian/",
+      "https://github.com/lemayian",
+      "https://x.com/Zack_lem",
+      "https://www.instagram.com/lemayian.izaac/"
+    ],
+    "knowsAbout": [
+      "Web Development",
+      "Full Stack Development",
+      "UI/UX Design",
+      "React",
+      "JavaScript",
+      "PHP",
+      "WordPress",
+      "E-commerce Development"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Full Stack Developer",
+      "description": "Develops web applications and digital solutions using modern technologies"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/form.css">
   <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/advanced-animations.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +96,9 @@
 <!-- body section. This is where the whole portfolio code is. DO NOT EDIT UNLESS I HAVE GIVEN YOU PERMISSION😁 -->
 
 <body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Incase the google tag in header doesnt load, this one will load -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWRQR0BTNT"></script>
@@ -44,35 +111,37 @@
   </script>
 
   <!-- HEADER CODE STYLING -->
-  <header>
+  <header role="banner">
     <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"
+      aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
       <div class="logo">
-        <a href=""><i class="fas fa-code"></i></a>
+        <a href="#home" aria-label="Isaac Lemayian Portfolio Home"><i class="fas fa-code" aria-hidden="true"></i></a>
       </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#home" role="menuitem" aria-label="Navigate to Home section">Home</a></li>
+        <li role="none"><a href="#about" role="menuitem" aria-label="Navigate to About section">About</a></li>
+        <li role="none"><a href="#skills" role="menuitem" aria-label="Navigate to Skills section">Skills</a></li>
+        <li role="none"><a href="#projects" role="menuitem" aria-label="Navigate to Projects section">Projects</a></li>
+        <li role="none"><a href="#contact" role="menuitem" aria-label="Navigate to Contact section">
             <div class="shopBtn">Contact</div>
           </a></li>
         <!-- Theme Toggle -->
-        <li>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
+        <li role="none">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="fas fa-moon" aria-hidden="true"></i>
           </button>
         </li>
       </ul>
-      <!-- HAMBUGER MENU -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+      <!-- HAMBURGER MENU -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false"
+        aria-controls="nav-links">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
     </nav>
   </header>
 
@@ -82,8 +151,8 @@
 
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-background">
+  <section class="hero" id="main-content" role="main" aria-labelledby="hero-title">
+    <div class="hero-background" aria-hidden="true">
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
       <div class="gradient-orb orb-3"></div>
@@ -91,30 +160,31 @@
 
     <div class="hero-content">
       <div class="hero-image-container">
-        <img src="images/Portrait1.jpg" alt="Isaac Lemayian - Developer & Designer" class="hero-image">
+        <img src="images/Portrait1.jpg" alt="Isaac Lemayian - Full Stack Developer & Designer professional headshot"
+          class="hero-image" loading="eager" width="400" height="400">
       </div>
 
       <div class="hero-text">
-        <h1 class="hero-title">
+        <h1 class="hero-title" id="hero-title">
           <span class="greeting">Hi there 👋🏼</span>
           <span class="name">I'm Isaac Lemayian</span>
         </h1>
         <p class="hero-description">
-          As a <span class="highlight">developer</span> and <span class="highlight">designer</span>, I create impactful
-          digital solutions that help individuals and
-          businesses enhance their online presence, boost engagement, and drive growth.
+          I'm a <span class="highlight">designer</span> and <span class="highlight">developer</span> who loves
+          creating cool stuff! 🚀
+          I build websites and apps that actually look good and work great.
+          With 4+ years of turning coffee into code and 110+ projects under my belt, I'm all about making digital
+          experiences that people actually enjoy using.
         </p>
 
-
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary-btn">
+        <div class="hero-buttons" role="group" aria-label="Call to action buttons">
+          <a href="#projects" class="btn primary-btn" aria-label="View my portfolio projects">
             <span>View Projects</span>
-            <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="" class="btn secondary-btn"
+          <a href="" class="btn secondary-btn" aria-label="Schedule a 30-minute consultation call"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/lemayian-dev/30min'});return false;">
-            <i class="fas fa-calendar"></i>
+            <i class="fas fa-calendar" aria-hidden="true"></i>
             <span>Schedule a Chat</span>
           </a>
         </div>
@@ -144,79 +214,40 @@
   </div>
 
   <!-- About Section -->
-  <section class="about" id="about">
+  <section class="about" id="about" aria-labelledby="about-title">
     <div class="about-container">
-      <img src="images/Isaac_Lemayian.jpg" alt="Isaac Lemayian - About Me" />
-      <h2>About Me</h2>
+      <img src="images/Isaac_Lemayian.jpg"
+        alt="Isaac Lemayian - Professional developer and designer working on digital projects" loading="lazy"
+        width="400" height="400" />
+      <h2 id="about-title">About Me</h2>
       <p>
-        I’m a Developer and Designer passionate about coding, design, and crafting seamless user
-        experiences. My journey into tech began with curiosity and has evolved into a commitment to exploring the
-        endless possibilities of design and technology. I thrive on experimenting with new tools, continuously improving
-        my skills, and transforming complex challenges into elegant solutions.
+        Hey there! I'm a <strong>designer</strong> and <strong>developer</strong> who's been building cool stuff for
+        over 4 years!
+        I got into tech because I was curious about how websites work, and now I'm obsessed with creating digital
+        experiences that people actually love using.
+        To be honest, I don't have a CS degree but I have a lot of experience and knowledge in the field.
       </p>
 
-      <a href="Resume/Isaac Lemayian CV 2025.docx.pdf" download="Isaac Lemayian CV.pdf" class="download-button">
+      <p>
+        In design, I'm pretty good with <strong>Figma</strong>, <strong>Photoshop</strong>, and the <strong>Adobe Creative
+          Suite</strong> for design.
+        I love taking complex problems and turning them into simple, beautiful solutions that actually work!
+      </p>
+
+      <p>
+        When I'm not coding or designing, you'll find me exploring new tech, working on side projects, or helping other
+        developers level up their skills.
+        I'm always learning something new because this industry moves fast and I want to stay ahead of the curve! 
+      </p>
+
+      <a href="Resume/Isaac Lemayian CV 2025.docx.pdf" download="Isaac Lemayian CV.pdf" class="download-button"
+        aria-label="Download Isaac Lemayian's resume in PDF format">
+        <i class="fas fa-download" aria-hidden="true"></i>
         Download Resume
       </a>
     </div>
   </section>
 
-  <!-- Videos Section -->
-  <section class="videos-section" id="videos">
-    <div class="videos-header">
-      <h2>Video Projects</h2>
-      <p>Films and videos I participated in shooting and editing.</p>
-    </div>
-    <!-- Wistia embed helper (loads once) -->
-    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-    <div class="videos-container">
-      <!-- Wistia video -->
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://fast.wistia.net/embed/iframe/9jndhce92w?seo=false&videoFoam=true"
-            allow="autoplay; fullscreen" allowtransparency="true" title="Mother Nature Hitting Back"></iframe>
-        </div>
-        <div class="video-title">Mother Nature Hitting Back</div>
-      </div>
-
-      <!-- YouTube videos -->
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/eGBIx0KC5xU?rel=0&modestbranding=1" title="YouTube video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/aL6PAXQgZFo?rel=0&modestbranding=1" title="YouTube video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/hftr4_LRiFk?rel=0&modestbranding=1" title="YouTube video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/IyWVn6wvH3s?rel=0&modestbranding=1" title="YouTube video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- skills section -->
@@ -446,85 +477,95 @@
 
 
   <!-- Projects I have done  -->
-  <section class="projects" id="projects">
+  <section class="projects" id="projects" aria-labelledby="projects-title">
     <div class="projects-header animate-on-scroll">
-      <h2>Featured Projects</h2>
-      <p>Here are some of the website projects I created for clients</p>
+      <h2 id="projects-title">Featured Projects</h2>
+      <p>Here are some of the most impactful website projects I've created for clients across various industries. Each
+        project represents a unique challenge and showcases different aspects of my full-stack development and design
+        capabilities.</p>
 
       <!-- Project Filter -->
-      <!-- <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="website">Websites</button>
-        <button class="filter-btn" data-filter="design">Design</button>
-        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <!-- <div class="project-filters" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+        <button class="filter-btn" data-filter="website" aria-pressed="false">Websites</button>
+        <button class="filter-btn" data-filter="design" aria-pressed="false">Design</button>
+        <button class="filter-btn" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
       </div> -->
     </div>
 
     <div class="projects-container">
-      <div class="project-card animate-on-scroll" data-category="website">
+      <article class="project-card animate-on-scroll" data-category="website" role="article"
+        aria-labelledby="project-1-title">
         <div class="project-image-container">
-          <img src="KerichoInvest.jpg" alt="Kericho Enterprise Summit Website" />
+          <img src="KerichoInvest.jpg"
+            alt="Kericho Enterprise Summit Website homepage showing event information and registration system"
+            loading="lazy" width="400" height="200" />
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://kerichoinvest.com/" target="_blank" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
+              <a href="https://kerichoinvest.com/" target="_blank" class="project-link"
+                aria-label="Visit Kericho Enterprise Summit live website (opens in new tab)">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                 Live Site
               </a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">Government</span>
-            <span class="tag">Summit system</span>
-            <span class="tag">Registration</span>
+          <div class="project-tags" role="list" aria-label="Project categories">
+            <span class="tag" role="listitem">Government</span>
+            <span class="tag" role="listitem">Event Management</span>
+            <span class="tag" role="listitem">Registration System</span>
           </div>
-          <h3>Kericho Enterprise Summit</h3>
+          <h3 id="project-1-title">Kericho Enterprise Summit</h3>
           <p>
-            Government website for Kericho Enterprise Summit with registration system for delegates, sponsors and
-            exhibitors.
+            A comprehensive government website for the Kericho Enterprise Summit featuring event management, delegate
+            registration, and real-time updates. Successfully handled 500+ registrations.
           </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>PHP</span>
-            <span>Elementor</span>
+          <div class="project-tech" role="list" aria-label="Technologies used">
+            <span role="listitem">HTML5</span>
+            <span role="listitem">CSS3</span>
+            <span role="listitem">JavaScript</span>
+            <span role="listitem">PHP</span>
+            <span role="listitem">Elementor</span>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- HadelPixels -->
-      <div class="project-card animate-on-scroll" data-category="website">
+      <article class="project-card animate-on-scroll" data-category="website" role="article"
+        aria-labelledby="project-2-title">
         <div class="project-image-container">
-          <img src="images/Home-Hadelpixels-Agency.png" alt="Hadel Pixels Agency Website" />
+          <img src="images/Home-Hadelpixels-Agency.png"
+            alt="Hadel Pixels Agency Website homepage showcasing design and development services" loading="lazy"
+            width="400" height="200" />
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://hadelpixels.com/" target="_blank" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
+              <a href="https://hadelpixels.com/" target="_blank" class="project-link"
+                aria-label="Visit Hadel Pixels Agency live website (opens in new tab)">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                 Live Site
               </a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">Agency</span>
-            <span class="tag">Design & Development</span>
-            <span class="tag">Automations</span>
+          <div class="project-tags" role="list" aria-label="Project categories">
+            <span class="tag" role="listitem">Digital Agency</span>
+            <span class="tag" role="listitem">Design & Development</span>
+            <span class="tag" role="listitem">Marketing Automation</span>
           </div>
-          <h3>Hadel Pixels Inc</h3>
+          <h3 id="project-2-title">Hadel Pixels Inc</h3>
           <p>
-            Design and development agency website offering mobile apps and web development services with modern, sleek
-            design.
+            A comprehensive digital agency website showcasing mobile app development and web design services with
+            integrated CRM functionality and automated marketing workflows.
           </p>
-          <div class="project-tech">
-            <span>FluentCRM</span>
-            <span>JavaScript</span>
-            <span>Wordpress</span>
+          <div class="project-tech" role="list" aria-label="Technologies used">
+            <span role="listitem">FluentCRM</span>
+            <span role="listitem">JavaScript</span>
+            <span role="listitem">WordPress</span>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- Commerce -->
       <div class="project-card animate-on-scroll" data-category="ecommerce">
@@ -580,9 +621,8 @@
           </div>
           <h3>Karen AGC Form Builder</h3>
           <p>
-            A software to help Karen AGC church to create forms for events and
-            collect data from the congregation. The software is built using React,
-            Typescript, Tailwind CSS and Supabase.
+            A form builder application for Karen AGC church to create event forms and collect congregation data. Built
+            with React, TypeScript, and Supabase.
           </p>
           <div class="project-tech">
             <span>React</span>
@@ -613,10 +653,8 @@
           </div>
           <h3>Project Request System</h3>
           <p>
-            I created this for my church media team. It was difficult for pastors
-            to request the media team for projects such as posters, banners and videos.
-            This software enables the team to assign projects among themselves, collaborate
-            and work faster. Its a mini CRM
+            A project management system for church media team to request and assign projects like posters, banners, and
+            videos. Features team collaboration and project tracking.
           </p>
           <div class="project-tech">
             <span>PHP</span>
@@ -728,6 +766,62 @@
     </div>
   </section>
 
+  <!-- Videos Section -->
+  <section class="videos-section" id="videos">
+    <div class="videos-header">
+      <h2>Video Projects</h2>
+      <p>I sometimes play with Premiere Pro and After Effects, and this is what I created! 🎬</p>
+    </div>
+    <!-- Wistia embed helper (loads once) -->
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <div class="videos-container">
+      <!-- Wistia video -->
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe src="https://fast.wistia.net/embed/iframe/9jndhce92w?seo=false&videoFoam=true"
+            allow="autoplay; fullscreen" allowtransparency="true" title="Mother Nature Hitting Back"></iframe>
+        </div>
+      </div>
+
+      <!-- YouTube videos -->
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/eGBIx0KC5xU?rel=0&modestbranding=1" title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/aL6PAXQgZFo?rel=0&modestbranding=1" title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/hftr4_LRiFk?rel=0&modestbranding=1" title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/IyWVn6wvH3s?rel=0&modestbranding=1" title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Figma project -->
   <!-- <section class="projects" id="projects">
     <h2>UI/UX Projects</h2>
@@ -779,39 +873,6 @@
 
 
 
-  <!-- reviews section -->
-  <section id="reviews" class="reviews">
-    <div class="reviews-section">
-      <h2>What Clients Say</h2>
-      <div class="review-carousel">
-        <div class="review">
-          <img src="images/black-man-7368413_960_720.jpg" alt="Ian Mulama" class="review-image">
-          <p class="review-text">"Isaac provided exceptional design work for our project. His attention to detail and
-            creativity were exactly what we needed."</p>
-          <p class="review-author">- Ian Mulama, Designer</p>
-        </div>
-        <div class="review">
-          <!-- <img src="images/man-3803551_1280.jpg" alt="Evans" class="review-image"> -->
-          <p class="review-text">"The level of professionalism and creativity Isaac brought to the table was
-            outstanding. He was a true partner in delivering a flawless product."</p>
-          <p class="review-author">- Evans, Marketing Manager</p>
-        </div>
-        <div class="review">
-          <img src="images/black-woman-7368403_1280.jpg" alt="Susan K." class="review-image">
-          <p class="review-text">"Working with Isaac was an absolute pleasure. He transformed our ideas into a stunning
-            website that exceeded expectations."</p>
-          <p class="review-author">- Susan K., Business Owner</p>
-        </div>
-
-        <div class="review">
-          <img src="images/woman-7175038_1280.jpg" alt="Emily W." class="review-image">
-          <p class="review-text">"Isaac's work ethic and dedication were commendable. He is truly talented and cares
-            about delivering the best for his clients."</p>
-          <p class="review-author">- Emily W., Lead designer</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -819,50 +880,51 @@
 
 
 
-  <!-- Call to Action Section -->
-  <section class="cta">
-    <div class="cta-container">
-      <h2>Ready to Start Your Project?</h2>
-      <p>Let's work together to bring your ideas to life with modern, responsive web solutions.</p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn-primary">Get Started</a>
-        <a href="#projects" class="btn-secondary">View My Work</a>
-      </div>
-    </div>
-  </section>
+
+
+
+
 
 
   <!-- Contact Section -->
-  <section class="ftco-section" id="contact">
+  <section class="ftco-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12">
-          <h2 class="heading-section">Get In Touch</h2>
+          <h2 class="heading-section" id="contact-title">Get In Touch</h2>
           <div class="contact-container">
             <div class="contact-form-container">
               <div class="contact-wrap">
-                <h3 class="mb-4">Write us</h3>
-                <div id="form-message-warning" class="mb-4"></div>
-                <div id="form-message-success" class="mb-4">
-                  Your message was sent, thank you!
+                <h3 class="mb-4">Send me a message</h3>
+                <div id="form-message-warning" class="mb-4" role="alert" aria-live="polite"></div>
+                <div id="form-message-success" class="mb-4" role="alert" aria-live="polite">
+                  Your message was sent successfully! I'll get back to you within 24 hours.
                 </div>
-                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm" novalidate>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                          placeholder="Your email address" required aria-describedby="email-error" autocomplete="email">
+                        <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
+                        <label for="message" class="sr-only">Message</label>
                         <textarea name="message" class="form-control" id="message" cols="30" rows="6"
-                          placeholder="Message" required></textarea>
+                          placeholder="Tell me about your project or how I can help you..." required
+                          aria-describedby="message-error"></textarea>
+                        <div id="message-error" class="error-message" role="alert" aria-live="polite"></div>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn btn-primary">
-                        <div class="submitting"></div>
+                        <button type="submit" class="btn btn-primary" aria-describedby="submit-status">
+                          <span class="btn-text">Send Message</span>
+                          <div class="submitting" id="submit-status" aria-live="polite"></div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -986,6 +1048,11 @@
 
 
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script src="scripts/performance.js"></script>
+  <script src="scripts/accessibility.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/live-chat.js"></script>
+  <script src="scripts/analytics.js"></script>
   <script src="index.js"></script>
   <script>
     // AJAX for main contact form

@@ -1,7 +1,7 @@
 // menu toggle for the mobile phone
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
-
+// menu toggle for mobile menu
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("active");
   navLinks.classList.toggle("active");
