@@ -180,10 +180,14 @@ a:focus {
   border-radius: 4px;
   z-index: 1000;
   transition: top 0.3s;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .skip-link:focus {
   top: 6px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Lazy loading placeholder */
@@ -3786,69 +3790,101 @@ footer {
 
 /* Videos Section */
 .videos-section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   background: var(--current-bg);
   text-align: center;
 }
 
 .videos-header h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--current-text);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
 }
 
 .videos-header p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--current-text);
   opacity: 0.9;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   font-style: italic;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .videos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2.5rem;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 3rem;
+  max-width: 1600px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .video-card {
   background: var(--current-card);
   border: 1px solid var(--current-border);
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .video-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(107, 95, 255, 0.2);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 80px rgba(107, 95, 255, 0.25);
   border-color: var(--primary-color);
+}
+
+.video-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(107, 95, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-card:hover::before {
+  opacity: 1;
 }
 
 .video-embed {
   position: relative;
   width: 100%;
-  height: 300px;
-  background: transparent;
-  border-radius: 20px 20px 0 0;
+  height: 350px;
+  background: #000;
+  border-radius: 24px 24px 0 0;
   overflow: hidden;
+  z-index: 2;
 }
 
 .video-embed iframe {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 20px 20px 0 0;
+  border-radius: 24px 24px 0 0;
   background: transparent;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-embed:hover iframe {
+  transform: scale(1.02);
 }
 
 /* Ensure video iframes are properly styled */
@@ -3861,39 +3897,63 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .videos-section {
+    padding: 3.5rem 1.5rem;
+  }
+  
   .videos-container {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 1rem;
+  }
+  
+  .video-embed {
+    height: 320px;
+  }
+  
+  .videos-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .videos-header p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .videos-section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .videos-container {
     gap: 2rem;
+    padding: 0;
   }
   
   .video-embed {
     height: 250px;
   }
   
-  .videos-header p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-embed {
-    height: 200px;
-  }
-  
-  .videos-container {
-    gap: 1.5rem;
-  }
-  
   .video-card {
-    border-radius: 15px;
+    border-radius: 20px;
   }
   
   .video-embed {
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
   }
   
   .video-embed iframe {
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .videos-header h2 {
+    font-size: 2rem;
+  }
+  
+  .videos-header p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
   }
 }
 

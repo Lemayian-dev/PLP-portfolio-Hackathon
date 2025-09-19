@@ -173,6 +173,20 @@
                 padding: 1rem;
                 overflow-y: auto;
                 background: #f8f9fa;
+                scroll-behavior: smooth;
+            }
+            
+            .chat-messages::-webkit-scrollbar {
+                width: 4px;
+            }
+            
+            .chat-messages::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            
+            .chat-messages::-webkit-scrollbar-thumb {
+                background: #c1c1c1;
+                border-radius: 2px;
             }
 
             .message {
@@ -193,12 +207,20 @@
                 padding: 0.75rem 1rem;
                 border-radius: 18px;
                 position: relative;
+                word-wrap: break-word;
+                line-height: 1.4;
+            }
+            
+            .message-content p {
+                margin: 0;
+                font-size: 0.9rem;
             }
 
             .bot-message .message-content {
                 background: #f8f9fa;
                 color: #333;
                 border-bottom-left-radius: 4px;
+                border: 1px solid #e9ecef;
             }
 
             .user-message .message-content {
@@ -209,10 +231,18 @@
 
             .message-time {
                 font-size: 0.7rem;
-                opacity: 0.6;
+                opacity: 0.7;
                 display: block;
                 margin-top: 0.25rem;
                 color: #666;
+            }
+            
+            .bot-message .message-time {
+                color: #666;
+            }
+            
+            .user-message .message-time {
+                color: rgba(255, 255, 255, 0.8);
             }
 
             .chat-input-container {
@@ -292,8 +322,24 @@
 
             @media (max-width: 480px) {
                 .chat-window {
-                    width: 300px;
-                    height: 400px;
+                    width: calc(100vw - 20px);
+                    height: calc(100vh - 100px);
+                    right: 10px;
+                    bottom: 90px;
+                    border-radius: 12px;
+                }
+                
+                .chat-messages {
+                    padding: 0.75rem;
+                }
+                
+                .message-content {
+                    max-width: 85%;
+                    padding: 0.6rem 0.8rem;
+                }
+                
+                .message-content p {
+                    font-size: 0.85rem;
                 }
             }
         `;
@@ -344,16 +390,22 @@
 
         // Auto-responses
         const responses = {
-            'hello': 'Hello! Thanks for reaching out. How can I help you today?',
-            'hi': 'Hi there! I\'m here to help. What would you like to know?',
-            'price': 'I\'d be happy to discuss pricing! My rates vary based on project scope. Would you like to schedule a call to discuss your specific needs?',
-            'cost': 'Great question! I offer competitive rates based on project requirements. Let me know what you\'re looking for and I can provide a detailed quote.',
-            'contact': 'You can reach me at lemayian.dev@gmail.com or schedule a call through the contact form on this page. I typically respond within 24 hours.',
-            'portfolio': 'You\'re already viewing it! Feel free to explore my projects above. I\'d be happy to discuss any specific project in detail.',
-            'experience': 'I have 3+ years of experience in full-stack development and design. I\'ve worked on 110+ projects for 25+ satisfied clients.',
-            'services': 'I offer web development, UI/UX design, e-commerce solutions, and digital consulting. What specific service are you interested in?',
-            'time': 'Project timelines vary based on complexity. Simple websites take 1-2 weeks, while complex applications can take 1-3 months. I can provide a detailed timeline after discussing your requirements.',
-            'default': 'Thanks for your message! I\'ll get back to you soon. In the meantime, feel free to check out my portfolio or contact me directly at lemayian.dev@gmail.com.'
+            'hello': '👋 Hello! Thanks for reaching out. I\'m Isaac, a designer and developer. How can I help you today?',
+            'hi': '👋 Hi there! I\'m here to help with any questions about my work or services. What would you like to know?',
+            'hey': '👋 Hey! Great to see you here. I\'d love to help you with your project needs. What\'s on your mind?',
+            'price': '💰 Great question! My rates vary based on project scope and complexity. For a detailed quote, I\'d recommend scheduling a quick call. You can book one using the "Schedule a Chat" button above, or email me at lemayian.dev@gmail.com.',
+            'cost': '💰 I offer competitive rates based on project requirements. Simple websites start around $500, while complex applications can range from $2,000-$10,000+. Let me know what you\'re looking for and I can provide a detailed quote!',
+            'contact': '📧 You can reach me at lemayian.dev@gmail.com or schedule a call through the "Schedule a Chat" button above. I typically respond within 24 hours and love discussing new projects!',
+            'portfolio': '🎨 You\'re already viewing it! Feel free to explore my projects above. I\'ve worked on 110+ projects including government websites, e-commerce platforms, and design projects. I\'d be happy to discuss any specific project in detail!',
+            'experience': '💼 I have 4+ years of experience in full-stack development and design. I\'ve successfully completed 110+ projects for 25+ satisfied clients, working with technologies like React, JavaScript, PHP, WordPress, and design tools like Figma and Adobe Creative Suite.',
+            'services': '🛠️ I offer a full range of services: Web Development (React, JavaScript, PHP, WordPress), UI/UX Design (Figma, Adobe Creative Suite), E-commerce Solutions, and Digital Consulting. What specific service are you interested in?',
+            'time': '⏰ Project timelines vary based on complexity: Simple websites (1-2 weeks), Medium projects (3-6 weeks), Complex applications (1-3 months). I can provide a detailed timeline after discussing your specific requirements.',
+            'website': '🌐 I build modern, responsive websites using the latest technologies. From simple landing pages to complex web applications, I create solutions that look great and work perfectly. What type of website do you need?',
+            'design': '🎨 I love creating beautiful, user-friendly designs! I work with Figma, Photoshop, and Adobe Creative Suite to bring ideas to life. Whether it\'s UI/UX design, branding, or graphics, I\'d be happy to help.',
+            'help': '🤝 I\'m here to help! You can ask me about my services, pricing, experience, or any questions about web development and design. What would you like to know?',
+            'thanks': '🙏 You\'re very welcome! I\'m always happy to help. Feel free to reach out anytime if you have more questions.',
+            'bye': '👋 Thanks for stopping by! Feel free to reach out anytime. You can contact me at lemayian.dev@gmail.com or schedule a call. Have a great day!',
+            'default': '💬 Thanks for your message! I\'d love to help you with your project. You can reach me at lemayian.dev@gmail.com or schedule a call using the button above. I typically respond within 24 hours!'
         };
 
         // Send message
@@ -387,10 +439,24 @@
         function getBotResponse(userMessage) {
             const lowerMessage = userMessage.toLowerCase();
             
-            for (const [keyword, response] of Object.entries(responses)) {
-                if (keyword !== 'default' && lowerMessage.includes(keyword)) {
-                    return response;
+            // Check for multiple keywords in order of priority
+            const keywordPriority = ['hello', 'hi', 'hey', 'price', 'cost', 'contact', 'portfolio', 'experience', 'services', 'time', 'website', 'design', 'help', 'thanks', 'bye'];
+            
+            for (const keyword of keywordPriority) {
+                if (lowerMessage.includes(keyword)) {
+                    return responses[keyword];
                 }
+            }
+            
+            // Check for partial matches
+            if (lowerMessage.includes('web') || lowerMessage.includes('site')) {
+                return responses.website;
+            }
+            if (lowerMessage.includes('ui') || lowerMessage.includes('ux') || lowerMessage.includes('figma')) {
+                return responses.design;
+            }
+            if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
+                return responses.portfolio;
             }
             
             return responses.default;
