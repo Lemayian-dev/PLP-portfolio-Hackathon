@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isaac Lemayian - Full Stack Developer & Designer | Portfolio</title>
+  <meta name="theme-color" content="#6b5fff" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Isaac Lemayian - Designer and developer | Portfolio</title>
   <meta name="description"
     content="Isaac Lemayian is a passionate full-stack developer and designer specializing in modern web applications, e-commerce solutions, and digital design. View my portfolio of 110+ projects and 25+ satisfied clients." />
   <meta name="keywords"
@@ -28,6 +30,14 @@
 
   <link rel="icon" href="images/portfolio image.jpeg">
   <link rel="canonical" href="https://lemayian.dev" />
+
+  <!-- Performance optimizations -->
+  <link rel="preload" href="images/Portrait1.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="styles/style.css" as="style">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//assets.calendly.com">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -53,7 +63,7 @@
     ],
     "knowsAbout": [
       "Web Development",
-      "Full Stack Development",
+      "Graphics design",
       "UI/UX Design",
       "React",
       "JavaScript",
@@ -63,21 +73,306 @@
     ],
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Full Stack Developer",
+      "name": "Web Developer and Graphics designer",
       "description": "Develops web applications and digital solutions using modern technologies"
     }
   }
   </script>
 
-  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/style.min.css" />
   <link rel="stylesheet" href="styles/form.css">
-  <link rel="stylesheet" href="styles/animations.css">
-  <link rel="stylesheet" href="styles/advanced-animations.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Critical CSS for above-the-fold content */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #101625;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    .hero {
+      position: relative;
+      height: calc(100vh - 100px);
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #101625;
+      padding: 40px 20px 20px;
+      overflow: hidden
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      z-index: 2
+    }
+
+    .hero-content img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      aspect-ratio: 1
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffffff
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ffffff
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px
+    }
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+      cursor: pointer
+    }
+
+    .primary-btn {
+      background-color: #6b5fff;
+      color: #ffffff
+    }
+
+    .secondary-btn {
+      background-color: #080242;
+      color: #ffffff
+    }
+
+    .btn:hover {
+      opacity: 0.8
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: #1a1f2f;
+      z-index: 999;
+      padding: 10px 20px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #2a2f3a;
+      transition: all 0.3s ease
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      cursor: pointer
+    }
+
+    .logo a {
+      color: #ffffff
+    }
+
+    .nav-links {
+      list-style: none;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1a1f2f;
+      padding: 20px;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid #2a2f3a;
+      z-index: 999
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 8px
+    }
+
+    .nav-links li a:hover {
+      color: #6b5fff;
+      background: rgba(107, 95, 255, 0.1);
+      transform: translateY(-2px)
+    }
+
+    .nav-links.active {
+      display: flex
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      z-index: 1001;
+      background: transparent;
+      border: none
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff;
+      margin: 4px;
+      transition: all 0.3s ease
+    }
+
+    .theme-toggle {
+      background: #101625;
+      border: 2px solid #2a2f3a;
+      color: #ffffff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .theme-toggle:hover {
+      background: #6b5fff;
+      color: white;
+      border-color: #6b5fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(107, 95, 255, 0.3)
+    }
+
+    @media (min-width: 769px) {
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none
+      }
+
+      .nav-links li {
+        margin: 0
+      }
+
+      .nav-links li a {
+        font-size: 1rem;
+        color: #ffffff
+      }
+
+      .nav-links li a:hover {
+        color: #f09
+      }
+
+      .menu-toggle {
+        display: none
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        min-height: 90vh;
+        padding: 80px 20px 40px
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 0 10px
+      }
+
+      .hero-content img {
+        max-width: 300px;
+        margin: 0 auto 20px
+      }
+
+      .hero-title {
+        font-size: 2.5rem
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px
+      }
+
+      .btn {
+        width: auto;
+        max-width: 200px;
+        min-width: 140px;
+        justify-content: center;
+        padding: 8px 16px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 8px
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="styles/animations.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles/advanced-animations.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    media="print" onload="this.media='all'">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- adding calendly so that a person can schedule a 30 minutes with me -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print"
+    onload="this.media='all'">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
@@ -160,8 +455,11 @@
 
     <div class="hero-content">
       <div class="hero-image-container">
-        <img src="images/Portrait1.jpg" alt="Isaac Lemayian - Full Stack Developer & Designer professional headshot"
-          class="hero-image" loading="eager" width="400" height="400">
+        <picture>
+          <source srcset="images/Portrait1.webp" type="image/webp">
+          <img src="images/Portrait1.jpg" alt="Isaac Lemayian - Full Stack Developer & Designer professional headshot"
+            class="hero-image" loading="eager" width="400" height="400">
+        </picture>
       </div>
 
       <div class="hero-text">
@@ -216,9 +514,12 @@
   <!-- About Section -->
   <section class="about" id="about" aria-labelledby="about-title">
     <div class="about-container">
-      <img src="images/Isaac_Lemayian.jpg"
-        alt="Isaac Lemayian - Professional developer and designer working on digital projects" loading="lazy"
-        width="400" height="400" />
+      <picture>
+        <source srcset="images/Isaac_Lemayian.webp" type="image/webp">
+        <img src="images/Isaac_Lemayian.jpg"
+          alt="Isaac Lemayian - Professional developer and designer working on digital projects" loading="lazy"
+          width="400" height="400" decoding="async" />
+      </picture>
       <h2 id="about-title">About Me</h2>
       <p>
         Hey there! I'm a <strong>designer</strong> and <strong>developer</strong> who's been building cool stuff for
@@ -229,7 +530,8 @@
       </p>
 
       <p>
-        In design, I'm pretty good with <strong>Figma</strong>, <strong>Photoshop</strong>, and the <strong>Adobe Creative
+        In design, I'm pretty good with <strong>Figma</strong>, <strong>Photoshop</strong>, and the <strong>Adobe
+          Creative
           Suite</strong> for design.
         I love taking complex problems and turning them into simple, beautiful solutions that actually work!
       </p>
@@ -237,7 +539,7 @@
       <p>
         When I'm not coding or designing, you'll find me exploring new tech, working on side projects, or helping other
         developers level up their skills.
-        I'm always learning something new because this industry moves fast and I want to stay ahead of the curve! 
+        I'm always learning something new because this industry moves fast and I want to stay ahead of the curve!
       </p>
 
       <a href="Resume/Isaac Lemayian CV 2025.docx.pdf" download="Isaac Lemayian CV.pdf" class="download-button"
@@ -499,7 +801,7 @@
         <div class="project-image-container">
           <img src="KerichoInvest.jpg"
             alt="Kericho Enterprise Summit Website homepage showing event information and registration system"
-            loading="lazy" width="400" height="200" />
+            loading="lazy" width="400" height="200" decoding="async" />
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://kerichoinvest.com/" target="_blank" class="project-link"
@@ -533,9 +835,12 @@
       <article class="project-card animate-on-scroll" data-category="website" role="article"
         aria-labelledby="project-2-title">
         <div class="project-image-container">
-          <img src="images/Home-Festus-Kir.png"
-            alt="Hadel Pixels Agency Website homepage showcasing design and development services" loading="lazy"
-            width="400" height="200" />
+          <picture>
+            <source srcset="images/Home-Festus-Kir.webp" type="image/webp">
+            <img src="images/Home-Festus-Kir.png"
+              alt="Hadel Pixels Agency Website homepage showcasing design and development services" loading="lazy"
+              width="400" height="200" decoding="async" />
+          </picture>
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://festuskir.com/" target="_blank" class="project-link"
@@ -555,7 +860,8 @@
           </div>
           <h3 id="project-2-title">Festus Kir</h3>
           <p>
-            Portfolio website for Festus Kir, a film maker, storyteller, crazy video editor, and the best colorist in town.
+            Portfolio website for Festus Kir, a film maker, storyteller, crazy video editor, and the best colorist in
+            town.
           </p>
           <div class="project-tech" role="list" aria-label="Technologies used">
             <span role="listitem">Wistia</span>
@@ -570,9 +876,12 @@
       <article class="project-card animate-on-scroll" data-category="website" role="article"
         aria-labelledby="project-2-title">
         <div class="project-image-container">
-          <img src="images/Home-Hadelpixels-Agency.png"
-            alt="Hadel Pixels Agency Website homepage showcasing design and development services" loading="lazy"
-            width="400" height="200" />
+          <picture>
+            <source srcset="images/Home-Hadelpixels-Agency.webp" type="image/webp">
+            <img src="images/Home-Hadelpixels-Agency.png"
+              alt="Hadel Pixels Agency Website homepage showcasing design and development services" loading="lazy"
+              width="400" height="200" decoding="async" />
+          </picture>
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://hadelpixels.com/" target="_blank" class="project-link"
@@ -605,7 +914,11 @@
       <!-- Commerce -->
       <div class="project-card animate-on-scroll" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="images/sokoFresh-–-Fresh-and-healthy-food-for-you (1).png" alt="SokoFresh E-commerce Platform" />
+          <picture>
+            <source srcset="images/sokoFresh-–-Fresh-and-healthy-food-for-you (1).webp" type="image/webp">
+            <img src="images/sokoFresh-–-Fresh-and-healthy-food-for-you (1).png" alt="SokoFresh E-commerce Platform"
+              loading="lazy" decoding="async" />
+          </picture>
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://commerce.hadelmotors.com/" target="_blank" class="project-link">
@@ -671,7 +984,11 @@
 
       <div class="project-card animate-on-scroll" data-category="website">
         <div class="project-image-container">
-          <img src="images/mediaprojectrequest.png" alt="Project Request Management System" />
+          <picture>
+            <source srcset="images/mediaprojectrequest.webp" type="image/webp">
+            <img src="images/mediaprojectrequest.png" alt="Project Request Management System" loading="lazy"
+              decoding="async" />
+          </picture>
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://mediaprojects.karenagc.org/" target="_blank" class="project-link">
@@ -704,7 +1021,7 @@
 
       <div class="project-card animate-on-scroll" data-category="website">
         <div class="project-image-container">
-          <img src="images/karenagc.PNG" alt="Karen Africa Gospel Church Website" />
+          <img src="images/karenagc.PNG" alt="Karen Africa Gospel Church Website" loading="lazy" decoding="async" />
           <div class="project-overlay">
             <div class="project-links">
               <a href="https://karenagc.org/" target="_blank" class="project-link">
@@ -763,12 +1080,18 @@
       <div class="designs-grid">
         <div class="design-item"
           onclick="openImageModal('images/Tuimarishe Tujenge1.jpg', 'Tuimarishe Tujenge Poster')">
-          <img src="images/Tuimarishe Tujenge1.jpg" alt="Tuimarishe Tujenge Poster" />
+          <picture>
+            <source srcset="images/Tuimarishe Tujenge1.webp" type="image/webp">
+            <img src="images/Tuimarishe Tujenge1.jpg" alt="Tuimarishe Tujenge Poster" loading="lazy" decoding="async" />
+          </picture>
         </div>
 
         <div class="design-item">
-          <img src="images/WhatsApp Image 2024-11-08 at 12.12.34 AM (1).jpeg" alt="Social Media Design"
-            onclick="openImageModal(this.src, this.alt)" />
+          <picture>
+            <source srcset="images/WhatsApp Image 2024-11-08 at 12.12.34 AM (1).webp" type="image/webp">
+            <img src="images/WhatsApp Image 2024-11-08 at 12.12.34 AM (1).jpeg" alt="Social Media Design"
+              onclick="openImageModal(this.src, this.alt)" loading="lazy" decoding="async" />
+          </picture>
         </div>
 
 
@@ -777,17 +1100,30 @@
           <img src="images/Welcome to church poster colored.jpg" alt="Church Welcome Poster" />
         </div> -->
         <div class="design-item" onclick="openImageModal('images/KEIS POSTER 48.jpg', 'KEIS Poster Design')">
-          <img src="images/KEIS POSTER 48.jpg" alt="KEIS Poster Design" />
+          <picture>
+            <source srcset="images/KEIS POSTER 48.webp" type="image/webp">
+            <img src="images/KEIS POSTER 48.jpg" alt="KEIS Poster Design" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="design-item" onclick="openImageModal('images/design 1.jpeg', 'Creative Design')">
-          <img src="images/design 1.jpeg" alt="Creative Design" />
+          <picture>
+            <source srcset="images/design 1.webp" type="image/webp">
+            <img src="images/design 1.jpeg" alt="Creative Design" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="design-item" onclick="openImageModal('images/design 2.jpeg', 'Artistic Poster')">
-          <img src="images/design 2.jpeg" alt="Artistic Poster" />
+          <picture>
+            <source srcset="images/design 2.webp" type="image/webp">
+            <img src="images/design 2.jpeg" alt="Artistic Poster" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="design-item"
           onclick="openImageModal('images/German Ambassador - Speaker (1).jpg', 'German Ambassador Speaker Poster')">
-          <img src="images/German Ambassador - Speaker (1).jpg" alt="German Ambassador Speaker Poster" />
+          <picture>
+            <source srcset="images/German Ambassador - Speaker (1).webp" type="image/webp">
+            <img src="images/German Ambassador - Speaker (1).jpg" alt="German Ambassador Speaker Poster" loading="lazy"
+              decoding="async" />
+          </picture>
         </div>
       </div>
     </div>
@@ -1083,12 +1419,26 @@
 
 
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script src="scripts/performance.js"></script>
-  <script src="scripts/accessibility.js"></script>
-  <script src="scripts/animations.js"></script>
-  <script src="scripts/live-chat.js"></script>
-  <script src="scripts/analytics.js"></script>
-  <script src="index.js"></script>
+  <script src="scripts/performance.js" defer></script>
+  <script src="scripts/accessibility.js" defer></script>
+  <script src="scripts/animations.js" defer></script>
+  <script src="scripts/live-chat.js" defer></script>
+  <script src="scripts/analytics.js" defer></script>
+  <script src="index.js" defer></script>
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
   <script>
     // AJAX for main contact form
     const contactForm = document.getElementById("contactForm");

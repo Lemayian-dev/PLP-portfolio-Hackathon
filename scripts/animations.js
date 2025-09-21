@@ -108,12 +108,13 @@
         });
     }
 
-    // Generic floating animation creator
+    // Generic floating animation creator - optimized for performance
     function createFloatingAnimation(element, speed = 0.2, amplitude = 5, rotation = 0.1, delay = 0) {
         let floatDirection = 1;
         let floatPosition = 0;
         let rotationDirection = 1;
         let rotationPosition = 0;
+        let animationId;
 
         const floatAnimation = () => {
             // Vertical floating
@@ -126,32 +127,50 @@
             if (rotationPosition > rotation) rotationDirection = -1;
             if (rotationPosition < -rotation) rotationDirection = 1;
 
-            // Apply transforms
-            element.style.transform = `translateY(${floatPosition}px) rotate(${rotationPosition}deg)`;
-            requestAnimationFrame(floatAnimation);
+            // Apply transforms using will-change for better performance
+            element.style.willChange = 'transform';
+            element.style.transform = `translate3d(0, ${floatPosition}px, 0) rotate(${rotationPosition}deg)`;
+            animationId = requestAnimationFrame(floatAnimation);
         };
 
         // Start animation after delay
         setTimeout(() => {
-            requestAnimationFrame(floatAnimation);
+            if (element.offsetParent !== null) { // Only animate if element is visible
+                requestAnimationFrame(floatAnimation);
+            }
         }, delay);
+
+        // Clean up animation when element is not visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting && animationId) {
+                    cancelAnimationFrame(animationId);
+                    element.style.willChange = 'auto';
+                } else if (entry.isIntersecting && !animationId) {
+                    requestAnimationFrame(floatAnimation);
+                }
+            });
+        });
+        observer.observe(element);
     }
 
-    // Advanced hover effects for project cards
+    // Advanced hover effects for project cards - optimized for performance
     function initAdvancedHoverEffects() {
         const projectCards = document.querySelectorAll('.project-card');
         
         projectCards.forEach(card => {
+            // Pre-optimize for better performance
+            card.style.willChange = 'transform, box-shadow, filter';
+            card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease';
+            
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02) rotateX(5deg)';
+                this.style.transform = 'translate3d(0, -15px, 0) scale(1.02) rotateX(5deg)';
                 this.style.boxShadow = '0 25px 50px rgba(107, 95, 255, 0.3)';
-                
-                // Add glow effect
                 this.style.filter = 'drop-shadow(0 0 20px rgba(107, 95, 255, 0.4))';
             });
 
             card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+                this.style.transform = 'translate3d(0, 0, 0) scale(1) rotateX(0deg)';
                 this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
                 this.style.filter = 'none';
             });
@@ -239,12 +258,23 @@
 
         const initParticles = () => {
             particles = [];
-            for (let i = 0; i < 80; i++) {
+            // Reduce particle count for better performance
+            for (let i = 0; i < 40; i++) {
                 particles.push(createParticle());
             }
         };
 
-        const animateParticles = () => {
+        let lastTime = 0;
+        const targetFPS = 30; // Reduce from 60fps to 30fps for better performance
+        const frameInterval = 1000 / targetFPS;
+
+        const animateParticles = (currentTime) => {
+            if (currentTime - lastTime < frameInterval) {
+                requestAnimationFrame(animateParticles);
+                return;
+            }
+            lastTime = currentTime;
+            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             particles.forEach((particle, index) => {
@@ -305,7 +335,7 @@
 
         resizeCanvas();
         initParticles();
-        animateParticles();
+        requestAnimationFrame(animateParticles);
 
         window.addEventListener('resize', () => {
             resizeCanvas();
