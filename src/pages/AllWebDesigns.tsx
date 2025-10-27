@@ -54,6 +54,15 @@ const AllWebDesigns: React.FC = () => {
         },
         {
             id: 6,
+            title: 'LedoKenya Website',
+            description: 'A modern, responsive website for LedoKenya featuring clean design, fast loading times, and seamless user experience. Built with modern web technologies and optimized for performance.',
+            image: '/LedoKenya_logo.webp',
+            technologies: ['React', 'JavaScript', 'CSS3', 'HTML5', 'Netlify'],
+            liveUrl: 'https://ledokenya.com/',
+            tags: ['Modern Website', 'Responsive Design', 'Performance Optimized']
+        },
+        {
+            id: 7,
             title: 'Karen Africa Gospel Church',
             description: 'This is a website for Karen AGC church which is a community of believers. Features include event management, sermon archives, and community updates.',
             image: '/karenagc.PNG',
@@ -61,7 +70,7 @@ const AllWebDesigns: React.FC = () => {
             liveUrl: 'https://karenagc.org/',
             tags: ['Church Website', 'Community']
         },
-      
+
     ]
 
     const goBack = () => {

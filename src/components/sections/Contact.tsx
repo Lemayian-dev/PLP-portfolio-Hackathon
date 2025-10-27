@@ -94,22 +94,20 @@ const Contact: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="section-title text-4xl md:text-5xl font-bold text-white mb-6">
-                        Get In Touch
+                        Say hello
                     </h2>
                     <p className="section-text text-xl text-gray-200 max-w-3xl mx-auto">
-                        Have a project in mind or want to collaborate? I'd love to hear from you.
-                        Let's discuss how we can work together to bring your ideas to life.
+                        Tell me a little about your project, your timeline, or the outcome you’re aiming for.
+                        I’ll reply within a day with next steps and a realistic plan.
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-16">
                     {/* Contact Information */}
                     <div>
-                        <h3 className="section-title text-2xl font-bold text-white mb-8">Let's Connect</h3>
+                        <h3 className="section-title text-2xl font-bold text-white mb-8">Let’s connect</h3>
                         <p className="section-text text-gray-300 mb-8 leading-relaxed">
-                            I'm always interested in new opportunities and exciting projects.
-                            Whether you have a question, want to collaborate, or just want to say hi,
-                            feel free to reach out!
+                            No hard sell, no templates. Just a quick chat to see if I’m the right fit.
                         </p>
 
                         {/* Contact Details */}
@@ -159,12 +157,12 @@ const Contact: React.FC = () => {
                     <div>
                         {submitStatus === 'success' && (
                             <div className="mb-6 p-4 bg-green-900/20 border border-green-500/20 text-green-300 rounded-lg">
-                                Your message was sent successfully! I'll get back to you within 24 hours.
+                                Thanks for reaching out — I’ll reply within 24 hours.
                             </div>
                         )}
                         {submitStatus === 'error' && (
                             <div className="mb-6 p-4 bg-red-900/20 border border-red-500/20 text-red-300 rounded-lg">
-                                Oops! There was a problem submitting your form. Please try again.
+                                Hmm, something went wrong. Mind trying again?
                             </div>
                         )}
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -213,7 +211,7 @@ const Contact: React.FC = () => {
                                     onChange={handleChange}
                                     required
                                     className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
-                                    placeholder="What's this about?"
+                                    placeholder="What’s this about?"
                                 />
                             </div>
 
@@ -229,7 +227,7 @@ const Contact: React.FC = () => {
                                     required
                                     rows={6}
                                     className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors duration-200 resize-none"
-                                    placeholder="Tell me about your project or idea..."
+                                    placeholder="Share a few lines about your project or idea..."
                                 />
                             </div>
 

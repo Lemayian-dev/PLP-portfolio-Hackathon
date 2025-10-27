@@ -49,9 +49,8 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <p className="section-text text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed hero-description">
-            I'm a <span className="text-blue-400 font-semibold">developer</span>{" "}
-            and <span className="text-purple-400 font-semibold">designer</span>{" "}
-            who loves creating cool stuff!
+            I <span className="text-blue-400 font-semibold">design</span> and <span className="text-purple-400 font-semibold">build</span>{" "} digital systems that work. Powered by AI, CMS, and creativity.
+
           </p>
 
           {/* Description */}
@@ -66,18 +65,18 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center hero-buttons px-4">
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 w-full sm:w-auto"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-fit sm:w-auto"
               onClick={() =>
                 window.open("/Isaac Lemayian CV (2).pdf", "_blank")
               }
             >
-              <Download className="mr-2 h-5 w-5" />
+              <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Download Resume
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 sm:px-8 py-3 w-full sm:w-auto"
+              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-fit sm:w-auto"
               onClick={scrollToNext}
             >
               View My Work
