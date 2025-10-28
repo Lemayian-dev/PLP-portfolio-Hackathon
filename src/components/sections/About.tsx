@@ -30,7 +30,7 @@ const About: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 md:mb-16 px-4">
                     <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-                        About Me - testing
+                        About Me
                     </h2>
                     <p className="section-text text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
                         I’m Isaac — a <strong>designer</strong> and <strong>developer</strong> who turns ideas into friendly, fast, real-world products.
