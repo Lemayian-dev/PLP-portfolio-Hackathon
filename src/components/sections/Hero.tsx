@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           {/* Profile Image */}
           <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-6 md:mb-8 mt-16 sm:mt-20 md:mt-24 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-2xl">
             <img
-              src="/Portrait1.jpg"
+              src="/Portrait1(1).webp"
               alt="Isaac Lemayian - Full Stack Developer & Designer professional headshot"
               className="w-full h-full object-cover hero-image"
               loading="eager"

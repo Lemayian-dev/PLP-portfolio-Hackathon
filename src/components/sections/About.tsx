@@ -62,7 +62,7 @@ const About: React.FC = () => {
                         <div className="relative group">
                             <div className="w-80 h-96 sm:w-72 sm:h-88 md:w-64 md:h-80 lg:w-64 lg:h-80 rounded-lg overflow-hidden shadow-2xl border-2 border-white/30 transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-blue-500/25 group-hover:border-blue-400/50">
                                 <img
-                                    src="/Isaac_Lemayian.jpg"
+                                    src="/Isaac_Lemayian.webp"
                                     alt="Isaac Lemayian - Professional portrait"
                                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                                     loading="lazy"
