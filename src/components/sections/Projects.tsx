@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       title: "Festus Kir Portfolio",
       description:
         "Portfolio website for Festus Kir, a film maker, storyteller, crazy video editor, and the best colorist in town.",
-      image: "/Home-Festus-Kir.png",
+      image: "/FestusKir-Director-Kir-Isaac-Lemayian.webp",
       technologies: ["Wistia", "JavaScript", "Elementor", "Hostinger"],
       liveUrl: "https://festuskir.com/",
       githubUrl: "#",
@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
       title: "Hadel Pixels Inc",
       description:
         "A comprehensive digital agency website showcasing mobile app development and web design services with integrated CRM functionality and automated marketing workflows.",
-      image: "/Home-Hadelpixels-Agency.png",
+      image: "/HadelPixels-Isaac-Lemayian.webp",
       technologies: ["FluentCRM", "JavaScript", "WordPress"],
       liveUrl: "https://hadelpixels.com/",
       githubUrl: "#",
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
       title: "Project Request System",
       description:
         "A project management system for church media team to request and assign projects like posters, banners, and videos. Features team collaboration and project tracking.",
-      image: "/mediaprojectrequest.png",
+      image: "/mediaprojects-Isaaclemayian.webp",
       technologies: ["PHP", "SQL", "Bootstrap", "JS", "Celcom", "M-pesa"],
       liveUrl: "https://mediaprojects.karenagc.org/",
       githubUrl: "#",
@@ -103,10 +103,10 @@ const Projects: React.FC = () => {
     },
     {
       id: 7,
-      title: "Karen Africa Gospel Church",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+      title: "Karen Africa Gospel Church",
       description:
         "This is a website for Karen AGC church which is a community of believers. Features include event management, sermon archives, and community updates.",
-      image: "/karenagc.PNG",
+      image: "/Karenagc1.webp",
       technologies: ["WordPress", "PHP", "MySQL", "WooCommerce", "FluentCRM"],
       liveUrl: "https://karenagc.org/",
       githubUrl: "#",
@@ -116,7 +116,8 @@ const Projects: React.FC = () => {
     {
       id: 8,
       title: "Resumind AI",
-      description: "AI powered Resume builder. Create professional resumes using Resumind.",
+      description:
+        "AI powered Resume builder. Create professional resumes using Resumind.",
       image: "/Resumind-AI.png",
       technologies: ["TailwindCSS", "React", "Clerk", "Vercel"],
       liveUrl: "https://resumind-gold.vercel.app/",
@@ -156,7 +157,7 @@ const Projects: React.FC = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-            
+
               <div className="p-4 md:p-6 lg:p-8">
                 <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
                   {project.tags.map((tag, index) => (
