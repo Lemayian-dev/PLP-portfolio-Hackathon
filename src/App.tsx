@@ -5,7 +5,7 @@ import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import Projects from './components/sections/Projects'
 import GraphicsDesign from './components/sections/GraphicsDesign'
-import Videos from './components/sections/Videos'
+// import Videos from './components/sections/Videos'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 import SmoothScroll from './components/ui/smooth-scroll'
@@ -26,7 +26,7 @@ function App() {
                 <About />
                 <Projects />
                 <GraphicsDesign />
-                <Videos />
+                {/* <Videos /> */}
                 <Contact />
               </main>
               <Footer />
