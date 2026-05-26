@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Palette, Database, Globe } from 'lucide-react'
+import { Code, Palette, Database, Globe, Cpu } from 'lucide-react'
 
 const About: React.FC = () => {
     const skills = [
@@ -12,6 +12,11 @@ const About: React.FC = () => {
             category: 'Design Tools',
             icon: Palette,
             technologies: ['Photoshop', 'Canva', 'Adobe Creative Suite']
+        },
+        {
+            category: 'AI & Automations',
+            icon: Cpu,
+            technologies: ['n8n', 'Zapier', 'Bitflows', 'Claude', 'OpenAI', 'DeepSeek', 'AI Agent Design', 'Workflow Automation']
         },
         {
             category: 'Development',
@@ -54,6 +59,15 @@ const About: React.FC = () => {
                                 Off the clock, I tinker with new tools, ship small experiments, and help friends ship theirs.
                                 If we work together, you'll get thoughtful communication, real timelines, and work I'll proudly sign my name to.
                             </p>
+                            <div className="mt-6 p-5 rounded-xl border border-blue-500/20 bg-blue-950/20 backdrop-blur-sm">
+                                <h4 className="text-white font-bold mb-2 text-sm sm:text-base flex items-center gap-2">
+                                    <Cpu className="h-4 w-4 text-blue-400" />
+                                    AI & Automation Consulting
+                                </h4>
+                                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                                    I help businesses save dozens of hours a week by automating repetitive manual tasks. Using workflow platforms like <strong>n8n</strong>, <strong>Zapier</strong>, and <strong>Bitflows</strong>, I connect your existing systems to advanced AI models (such as <strong>Claude</strong>, <strong>OpenAI</strong>, and <strong>DeepSeek</strong>) to handle data entry, lead categorization, email replies, and custom AI agents. Let's build a smarter workflow together.
+                                </p>
+                            </div>
                         </div>
                     </div>
 

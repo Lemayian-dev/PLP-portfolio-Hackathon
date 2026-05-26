@@ -8,6 +8,16 @@ const AllProjects: React.FC = () => {
 
     const allProjects = [
         {
+            id: 0,
+            title: 'Lewenei Tours & Safaris',
+            description: 'A premium travel and booking platform for Lewenei Tours & Safaris. Features custom interactive itinerary planners, direct booking integration, responsive destination guides, and stunning visual storytelling for East African wildlife experiences.',
+            image: '/lewenei_safaris.png',
+            technologies: ['React', 'Vite', 'TailwindCSS', 'Node.js', 'Mapbox API'],
+            liveUrl: 'https://leweneitoursandsafaris.com/',
+            featured: true,
+            tags: ['Travel & Tourism', 'Booking Engine', 'Itinerary Builder']
+        },
+        {
             id: 1,
             title: 'Kericho Enterprise Summit',
             description: 'A comprehensive government website for the Kericho Enterprise Summit featuring event management, delegate registration, and real-time updates. Successfully handled 500+ registrations.',
